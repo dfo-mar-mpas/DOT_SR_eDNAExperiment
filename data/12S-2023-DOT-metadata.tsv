@@ -1,0 +1,61 @@
+sample-id	sampler	preservative	week
+#q2:types	categorical	categorical	categorical
+Wk1_Control	Smith-Root	Frozen, -80	1
+Wk1_Blank	Smith-Root	Frozen, -80	1
+Wk2_Control	Smith-Root	Frozen, -80	2
+Wk3_Control	Smith-Root	Frozen, -80	3
+Wk3_Blank	Smith-Root	Frozen, -80	3
+Wk4_1003Parallel	Smith-Root	Frozen, -80	4
+Wk4_1004Parallel	Smith-Root	Frozen, -80	4
+Wk4_1005Parallel	Smith-Root	Frozen, -80	4
+Wk4_Blank	Smith-Root	Frozen, -80	4
+Wk5_1003Parallel	Smith-Root	Frozen, -80	5
+Wk5_1004Parallel	Smith-Root	Frozen, -80	5
+Wk5_1005Parallel	Smith-Root	Frozen, -80	5
+Wk5_FieldBlank	Smith-Root	Frozen, -80	5
+Wk6_1003Parallel	Smith-Root	Frozen, -80	6
+Wk6_1004Parallel	Smith-Root	Frozen, -80	6
+Wk6_1005Parallel	Smith-Root	Frozen, -80	6
+Wk6_FieldBlank	Smith-Root	Frozen, -80	6
+Wk7_1003Parallel	Smith-Root	Frozen, -80	7
+Wk7_1004Parallel	Smith-Root	Frozen, -80	7
+Wk7_1005Parallel	Smith-Root	Frozen, -80	7
+Wk7_FieldBlank	Smith-Root	Frozen, -80	7
+Wk8_1003Parallel	Smith-Root	Frozen, -80	8
+Wk8_1004Parallel	Smith-Root	Frozen, -80	8
+Wk8_1005Parallel	Smith-Root	Frozen, -80	8
+Wk8_FieldBlank	Smith-Root	Frozen, -80	8
+Wk9_1003Parallel	Smith-Root	Frozen, -80	9
+Wk9_1004Parallel	Smith-Root	Frozen, -80	9
+Wk9_FieldBlank	Smith-Root	Frozen, -80	9
+1003_Wk1	DOT Sampler	RNAlater	1
+1003_Wk2	DOT Sampler	RNAlater	2
+1003_Wk3	DOT Sampler	RNAlater	3
+1003_Wk4	DOT Sampler	RNAlater	4
+1003_Wk5	DOT Sampler	RNAlater	5
+1003_Wk6	DOT Sampler	RNAlater	6
+1003_Wk7	DOT Sampler	RNAlater	7
+1003_Wk8	DOT Sampler	RNAlater	8
+1003_Wk9	DOT Sampler	RNAlater	9
+1004_Wk1	DOT Sampler	RNAlater	1
+1004_Wk2	DOT Sampler	RNAlater	2
+1004_Wk3	DOT Sampler	RNAlater	3
+1004_Wk4	DOT Sampler	RNAlater	4
+1004_Wk5	DOT Sampler	RNAlater	5
+1004_Wk6	DOT Sampler	RNAlater	6
+1004_Wk7	DOT Sampler	RNAlater	7
+1004_Wk8	DOT Sampler	RNAlater	8
+1004_Wk9	DOT Sampler	RNAlater	9
+1005_Wk1	DOT Sampler	RNAlater	1
+1005_Wk2	DOT Sampler	RNAlater	2
+1005_Wk3	DOT Sampler	RNAlater	3
+1005_Wk4	DOT Sampler	RNAlater	4
+1005_Wk5	DOT Sampler	RNAlater	5
+1005_Wk6	DOT Sampler	RNAlater	6
+1005_Wk7	DOT Sampler	RNAlater	7
+1005_Wk8	DOT Sampler	RNAlater	8
+1005_Wk9	DOT Sampler	RNAlater	9
+XN_1	Lab	Lab	Lab
+XN_2	Lab	Lab	Lab
+XN_3	Lab	Lab	Lab
+PCR_NEG	Lab	Lab	Lab
