@@ -146,27 +146,28 @@ qiime dada2 denoise-paired \
 #12S - trying some different r-len truncs
 qiime dada2 denoise-paired \
 --i-demultiplexed-seqs 12s-DOT-demux-trimmed.qza \
---p-trunc-len-f  126 \
---p-trunc-len-r  126 \
+--p-trim-left-r 3 \
+--p-trunc-len-f  140 \
+--p-trunc-len-r  134 \
 --p-n-threads 0 \
 --p-min-overlap 8 \
 --p-pooling-method independent \
---output-dir DOT12S-denoised \
+--output-dir DOT12S-denoised-Test2 \
 --verbose
 
 
 #Generate summaries of denoising stats and feature table
-#16S
+#12S
 qiime feature-table summarize \
-  --i-table dada2out/table.qza \
-  --o-visualization dada2out/table.qzv \
-  --m-sample-metadata-file ../../2022-sample-metadata_SABonly.tsv &&
+  --i-table DOT12S-denoised-Test2/table.qza \
+  --o-visualization DOT12S-denoised-Test2/table.qzv \
+  --m-sample-metadata-file 2023-DOT-metadata.tsv &&
 qiime feature-table tabulate-seqs \
-  --i-data dada2out/representative_sequences.qza \
-  --o-visualization dada2out/rep-seqs.qzv &&
+  --i-data DOT12S-denoised-Test2/representative_sequences.qza \
+  --o-visualization DOT12S-denoised-Test2/rep-seqs.qzv &&
 qiime metadata tabulate \
-  --m-input-file dada2out/denoising_stats.qza \
-  --o-visualization dada2out/denoising-stats.qzv
+  --m-input-file DOT12S-denoised-Test2/denoising_stats.qza \
+  --o-visualization DOT12S-denoised-Test2/denoising-stats.qzv
   
   
  qiime tools view /path_to_output_folder/filename_rep_seqs.qzv  ## export the ASV fasta file from the view for input into FuzzyID2 and BLAST
