@@ -1,0 +1,255 @@
+Feature ID	Taxon	Confidence	BLAST	PercentMatch	Notes
+#q2:types	categorical	categorical	categorical	numerical	categorical
+79c5bf8e719046b98ea4b9639d500374	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.998706984741	Scomber scombrus	100	
+d49d5af0e3a68dd460877f6c4bd605ab	k__Metazoa; p__Chordata; c__Actinopteri; o__Labriformes; f__Labridae; g__Tautogolabrus; s__adspersus	0.985287960792496	Tautogolabrus adspersus	100	
+0ae696476b906c4fc238a851e28b7034	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis	0.998244998717408	Pholis gunnellus	100	
+02afebb71268594917fa69fbc6637889	k__Metazoa; p__Chordata; c__Mammalia; o__Primates; f__Hominidae; g__Homo; s__sapiens	0.999934666055195	Homo sapiens	100	
+2a710e68a60b375a53a1720d3fe6a9b7	k__Metazoa; p__Chordata; c__Actinopteri; o__Pleuronectiformes; f__Pleuronectidae	0.999999999989747	Platichthys stellatus	100	Also 100 match to Yellowtail
+5a7783c847304564e78f42bc0b5eef42	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Alosa; s__sapidissima	0.995901364092706	Alosa pseudoharengus	100	
+56746295e600d52d1ca6832099704ccf	k__Metazoa; p__Chordata; c__Mammalia; o__Artiodactyla; f__Suidae; g__Sus	0.999994437653887	Sus scrofa	100	
+a0c42d2af9c0d45fdee4baddcdaffbdd	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes	0.999998696701956	Myoxocephalus aenaeas	99.4	
+1e646e70fecffb34dc28c644c3e111c9	k__Metazoa; p__Chordata; c__Actinopteri; o__Uranoscopiformes; f__Ammodytidae; g__Ammodytes	0.999999969454504	Ammodytes	100	
+510fc640c809ed5a09b902588703a6ee	k__Metazoa; p__Chordata; c__Actinopteri; o__Anguilliformes; f__Anguillidae; g__Anguilla; s__bicolor pacifica	0.996979160422751	Anguilla rostrata	100	
+4d3d4816408b5e20e2360a578c7b7448	k__Metazoa; p__Chordata; c__Mammalia; o__Artiodactyla; f__Bovidae; g__Ovis; s__aries	0.99999103521328	Ovis aries	100	
+4ef0db793d324235da34de826d006177	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae; g__Salvelinus	0.783622407301161	Salmo salar	99.41	
+852e37ecfa2b3985d66117af128b8063	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Clupea; s__pallasii	0.999999987414214	Clupea harengus	100	
+373cf56bf02b9f1e431f37cebfa6bb5c	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis; s__laeta	0.95129618943822	Pholis laeta	100	Also 99 to Pholis gunnelus
+de1e2097038a24cb76600c94c5f79597	k__Metazoa; p__Chordata; c__Actinopteri; o__Atheriniformes; f__Atherinopsidae; g__Menidia; s__beryllina	0.985186490633122	Menidia menidia	100	
+31b74ef62b4422e3579db4d236d3fb1d	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Stichaeidae	0.970478985767819	Eumesogrammus praecisus	100	Also 100 to Ulvaria subbifurcata
+d363797257fc5f49c8ec0c9e6cbf7392	k__Metazoa; p__Chordata; c__Mammalia; o__Artiodactyla; f__Suidae; g__Sus	0.999993715138138	Sus scrofa	100	
+b7f61135eb2f9a863292c706ddb7e245	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Sebastidae; g__Sebastes	0.999521085917904	Sebastes fasciatus	100	Also 99.5 to mentella
+19c693f42cb365035c714e619ba37005	k__Metazoa; p__Chordata; c__Mammalia; o__Artiodactyla; f__Suidae; g__Sus	0.999969468820978	Sus scrofa	100	
+0142d69b5944527bedc81a6ddeee4c16	k__Metazoa; p__Chordata; c__Mammalia; o__Artiodactyla; f__Suidae; g__Sus	0.999975984423348	Sus scrofa	100	
+e75110e493a85f1f5bc70a4f083f7cf3	k__Metazoa; p__Chordata; c__Mammalia; o__Artiodactyla; f__Bovidae; g__Bos; s__taurus	0.999913950431855	Bos taurus	100	
+73f4c80cb0472c0cd5fe438696babc6e	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Brevoortia; s__tyrannus	0.999932603114595	Brevoortia tyrannus	100	Also 100 match to B patronus
+b3f5d4613592313bc889040f42e9a64b	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae	0.920314763105884	Myoxocephalus aenaeas	100	
+caba00a3b4252ef1350b9c03c66fea54	k__Metazoa; p__Chordata; c__Actinopteri; o__Anguilliformes; f__Anguillidae; g__Anguilla; s__bicolor pacifica	0.992901918288604	Anguilla rostrata	100	
+b488a799cb78c275db3b62e0fa04e354	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Gasterosteidae; g__Gasterosteus	0.893458207503834	Gasterosteus aculeatus	100	
+f62291986e00e2fbad38d6d0349f29ce	k__Metazoa; p__Chordata; c__Actinopteri; o__Gadiformes; f__Gaidropsaridae; g__Gaidropsarus	0.707364995239742	Enchelyopus cimbrius	100	
+a42d34d610321be33454794f85ce9a86	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Alosa; s__sapidissima	0.987704097204598	Alosa pseudoharengus	99.4	
+102728a2f4054d96242082d58b95dc7e	k__Metazoa; p__Chordata; c__Actinopteri; o__Cyprinodontiformes; f__Fundulidae; g__Fundulus; s__heteroclitus	0.999983537440764	Fundulus heteroclitus	100	
+5ba8ac0932668789e379cc462b15ef3c	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Alosa; s__sapidissima	0.926484895823145	Alosa aestivalis	100	
+1027b3871ce96578bbc92cb92c9fc022	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Alosa; s__sapidissima	0.994792257690311	Alosa pseudoharengus	99.4	
+e35a6258a3d2194be267ddb4ce7ceb7b	k__Metazoa; p__Chordata; c__Actinopteri	0.925210709083668	Plethodon cinereus	100	salamander
+eb4f78546818a1491bbfa47579a6433e	k__Metazoa; p__Chordata; c__Actinopteri; o__Labriformes; f__Labridae; g__Tautogolabrus; s__adspersus	0.989163097215382	Tautogolabrus adspersus	99.4	
+60dc096e851d915be39f04538d1da981	k__Metazoa; p__Chordata; c__Actinopteri; o__Gadiformes; f__Phycidae; g__Urophycis	0.999997865645249	Urophycis chuss	100	
+833f78d049b5386151c7f98b2836d8f7	k__Metazoa; p__Chordata; c__Actinopteri; o__Cypriniformes; f__Leuciscidae; g__Pimephales; s__notatus	0.969207685642762	Luxilus cornutus	100	freshwater shiner
+ef9dc215c0df2ee19cff7b6b9b178233	k__Metazoa; p__Chordata; c__Actinopteri; o__Cichliformes; f__Cichlidae; g__Oreochromis; s__aureus	0.981062824161457	Oreochromis niloticus	100	tilapia
+104f267fdf7036d7a3304bfe80d63ffa	k__Metazoa; p__Chordata; c__Actinopteri; o__Labriformes; f__Labridae; g__Tautogolabrus; s__adspersus	0.982051802419649	Tautogolabrus adspersus	99.4	
+d57d1eb012225179da306dd78fa8b3e6	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.9987038192586	Scomber scombrus	99.4	
+901de58abb0ad642700747f01d50e9bb	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.996336850014192	Scomber scombrus	99.4	
+23724856414b1c535c6cf4b6fcfc272e	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis	0.997912675760102	Pholis gunnellus	99.4	
+0ee2bec099a05d8d4609d2e9cfb61324	k__Metazoa; p__Chordata; c__Actinopteri; o__Pleuronectiformes; f__Pleuronectidae; g__Pseudopleuronectes	0.992270866939719	Pseudopleuronectes americanus	100	
+fc854d8f9ef9808dc172ca3c36a94579	k__Metazoa; p__Chordata; c__Actinopteri; o__Atheriniformes; f__Atherinopsidae; g__Menidia; s__beryllina	0.953134544484666	Menidia menidia	99.4	
+5cc9c634c441079aca6cf9bdfe61b13f	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Gasterosteidae; g__Pungitius	0.999999928262601	Pungitius pungitius	100	
+8377854474338cf60b17f3172f6e33e4	k__Metazoa; p__Chordata; c__Actinopteri; o__Gadiformes; f__Gadidae; g__Pollachius; s__pollachius	0.925004831789913	Pollachius virens	100	Also 99 match P. Pollachius
+2e413b44919a35e86a58198f03c37aa2	k__Metazoa; p__Chordata; c__Actinopteri; o__Atheriniformes; f__Atherinopsidae; g__Menidia; s__beryllina	0.949568332448212	Menidia menidia	99.4	
+f64255a6fb7a61e5b532d08061b29b95	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Cottus; s__beldingii	0.891723437757355	Cottus asper	100	
+56f2890a62178fec4f57e9f56ffe0282	k__Metazoa; p__Chordata; c__Mammalia; o__Artiodactyla; f__Suidae; g__Sus	0.999966981414674	Sus scrofa	100	
+b33507582222c1d4c2be9a1ca830ad8a	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Cottus; s__beldingii	0.79702145267554	Cottus cognatus	100	Also 100 match to C pollux and bairdii
+9920e720cdc992c406e02aa639061ce6	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis	0.997858710974215	Pholis gunnellus	99.4	
+1662a6be7a9ee6dde3335b77f37c6fef	k__Metazoa; p__Chordata; c__Actinopteri; o__Labriformes; f__Labridae; g__Tautogolabrus; s__adspersus	0.982810632230536	Tautogolabrus adspersus	99.4	
+f7e3adbeff07c41ffad9206ea68e8840	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Clupea; s__pallasii	0.999999999792067	Clupea pallasii	100	
+5f88b891f3197090cf6e8a73ae8ecfe1	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.99768784529629	Scomber scombrus	99.4	
+dccffc965de9f985fb5aae9257b79696	k__Metazoa; p__Chordata; c__Actinopteri; o__Labriformes; f__Labridae; g__Tautogolabrus; s__adspersus	0.991668788923159	Tautogolabrus adspersus	99.4	
+c2768893efdd51ffd3d8031ffb9e10c7	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.998322495742247	Scomber scombrus	99.4	
+2d40b94157ada9bda343c9a8133f85e2	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis	0.996969303758479	Pholis crassispina	100	Also 100 match to P. Picta and clemensi
+d72e04f3b2b3a510ef0a5a48ea3590cf	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae	0.756529517765158	Myoxocephalus aenaeas	98.8	
+c04af0bcbe3ccbeb32afbb27f6925df9	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Artedius; s__harringtoni	0.999999939212261	Artedius harringtoni	100	
+28c62c4a3e6358366e325b8b176832c3	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis	0.997909674599865	Pholis gunnellus	100	
+027c4980217ec54fff854c1588f05def	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis	0.990914298259503	Pholis gunnellus	99.4	
+d8f1ae4e27f0d1abb83b9fe2fdc51c98	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Myoxocephalus	0.835939145898304	Myoxocephalus quadricornis	100	
+4db5428e97e0b5ba2c9f83b1f19df956	k__Metazoa; p__Chordata; c__Mammalia; o__Primates; f__Hominidae; g__Homo; s__sapiens	0.999324038185927	Homo sapiens	100	
+0942b6c7edee59dd8e22e567dea5e6d2	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.996515419388617	Scomber scombrus	100	
+e87ae650f1c4c266ba5027f5850135f8	k__Metazoa; p__Chordata; c__Actinopteri; o__Gadiformes; f__Gadidae; g__Melanogrammus; s__aeglefinus	0.949109382788288	Melanogrammus aeglefinus	100	
+c29f757a85c7c6de0c97756088fcf510	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Stichaeidae; g__Anoplarchus	0.999534633156286	Anoplarchus purpurescens	100	Also 100 match to A insignis
+83524528f8bd5e08ab56b84a69886514	k__Metazoa; p__Chordata; c__Mammalia; o__Primates; f__Hominidae; g__Homo; s__sapiens	0.999712571715643	Homo sapiens	100	
+ac299e5e86735f12502ab12287e27329	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Alosa; s__sapidissima	0.992998344170307	Alosa pseudoharengus	99.4	
+b189e417627d898b6e477d1df634f9d8	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae; g__Oncorhynchus	0.906524934873294	Oncorhynchus keta	100	
+7b0f1209dc0252f77c0dee6751eec1e5	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Stichaeidae; g__Xiphister; s__mucosus	0.866283652441684	Xiphister atropurpureus	100	Also 100 match to mucosus
+7e9a704863bd8c4a81f02a926499b300	k__Metazoa; p__Chordata; c__Mammalia; o__Artiodactyla; f__Bovidae; g__Bos; s__taurus	0.999830750067873	Bos taurus	100	
+60b91c79dc7ff82887799b29d70e641c	k__Metazoa; p__Chordata; c__Actinopteri; o__Anguilliformes; f__Anguillidae; g__Anguilla; s__bicolor pacifica	0.991756032111923	Anguilla rostrata	98	
+7cac3fd6e6d382c1aba3ad0b7bf4b83f	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Artedius; s__fenestralis	0.99999974529948	Artedius fenestralis	100	
+1882ab866c3b89dad3ae3d014791415f	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Gasterosteidae; g__Gasterosteus; s__nipponicus	0.798559701382755	Gasterosteus aculeatus	99.4	
+125cf2ef4d5df2e36b3935d7417c5ad5	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Ascelichthys; s__rhodorus	0.999874414323884	Ascelichthys rhodorus	100	
+cc918e28c0e5a84b7b75501da303f36b	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.997721519853506	Scomber scombrus	99.4	
+37a82feda1e062b695c41590816e8808	k__Metazoa; p__Chordata; c__Actinopteri; o__Euteleosteomorpha; f__Embiotocidae; g__Cymatogaster; s__aggregata	0.999990544249654	Cymatogaster aggregata	100	
+aacc7914e08769d603efe3cca026d622	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.998319718038867	Scomber scombrus	99.4	
+37c46c38ec72f57a367cf157c22b9b7f	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae; g__Oncorhynchus; s__clarkii	0.985242111192576	Oncorhynchus clarkii	100	
+0572adb9b78e5935fa021b19c37f2371	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Oligocottus; s__maculosus	0.999920934752739	Oligocottus maculosus	100	Also 100 match to O snyderi
+ad1636e972e3910a1f03aa7642dc3c80	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.998559471414203	Scomber scombrus	100	
+82d197a201524ad70dba9581c6b0b2eb	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae; g__Oncorhynchus; s__kisutch	0.988899819775214	Oncorhynchus kisutch	100	
+972a64d72b310475e7f7d03fd88f16e6	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Enophrys; s__bison	0.990702826773443	Enophrys bison	100	
+a887b2f7fcd44b54c767a72ef1fdb3bd	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis	0.998014051117627	Pholis gunnellus	99.5	
+9563941ce4db4b5a15c57819f4945451	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae; g__Oncorhynchus	0.819049259150896	Oncorhynchus nerka	100	
+736beb065b3632b774c90a2c0526f507	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis	0.998245561583726	Pholis gunnellus	100	
+03fbdff3efca35fa823e06a6f1826174	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Alosa; s__sapidissima	0.991924105296812	Alosa pseudoharengus	99.4	
+f5bb3a7553a3e0729147c89e464b29d3	k__Metazoa; p__Chordata; c__Actinopteri; o__Labriformes; f__Labridae; g__Tautogolabrus; s__adspersus	0.991118615827007	Tautogolabrus adspersus	100	
+093cbb97253cb6ed3ff426ac2bcaa5cb	k__Metazoa; p__Chordata; c__Actinopteri; o__Gadiformes; f__Gadidae; g__Gadus	0.99997705818447	Gadus morhua	100	
+d9b47d9aaed6209f3c81278d71ce4c7b	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Aulorhynchidae; g__Aulorhynchus; s__flavidus	0.999999887960221	Aulorhynchus flavidus	100	
+de327441dc701f7b47d65ca1f6faf87c	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Sebastidae; g__Sebastes; s__cheni	0.714652753326798	Sebastes baramenuke	100	Also 100 match to multiple Sebastes spp
+fc4aa16810635452d278a21b350bbc5a	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae; g__Salvelinus	0.834568168015879	Salmo salar	100	
+086c7e2e2de4106da172400808b482a6	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae	0.999999999163249	Oncorhynchus tshawytscha	100	
+2df02d4373b31365cd5fb2ac65a71227	k__Metazoa; p__Chordata; c__Actinopteri; o__Pleuronectiformes; f__Pleuronectidae	0.999999999995664	Hippoglossoides platessoides	100	
+f74beb87d2cbc1dfd6fa6f7b34c24561	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae; g__Salvelinus; s__curilus	0.907138069500768	Salvelinus taranetzi	100	
+0761814ef1395e674c12f4e0d7e5deb9	k__Metazoa; p__Chordata; c__Actinopteri; o__Labriformes; f__Labridae; g__Tautogolabrus; s__adspersus	0.988385845235015	Tautogolabrus adspersus	100	
+6ef40f271eb6251d04e861e6a7c719b8	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger; s__brachysoma	0.885629822300693	Scomber scombrus	100	
+d375a714bebfff2179e8faf6c395da4c	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Myoxocephalus; s__polyacanthocephalus	0.960800966437679	Myoxocephalus jaok	100	Also 100 match to multiple Myoxocephalus
+299048dc7270729c57ca559454cfecc4	k__Metazoa; p__Chordata; c__Actinopteri; o__Gadiformes; f__Gadidae; g__Gadus	0.999977125895499	Gadus chalcogrammus	100	Alaskan pollock
+e38aeb7c0494fe9e8c3ad33c1d6381c7	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Sebastidae; g__Sebastes	0.758587464993591	Sebastes caurinus	100	Also 100 match to multiple Sebastes spp
+e9406f1727803eb4e6bd5857f8bdaf7a	k__Metazoa; p__Chordata; c__Actinopteri; o__Anguilliformes; f__Anguillidae; g__Anguilla; s__bicolor pacifica	0.981127251805622	Anguilla rostrata	98.8	
+a9fd6fca151879171c192acacbfcbf5c	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Taurocottus; s__bergii	0.837662564865208	Leptocottus armatus	100	
+b8f361a0bbb3e88b7b0dccf60aa569d3	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Hexagrammidae; g__Hexagrammos; s__agrammus	0.729205619744175	Hexagrammos decagrammus	100	
+be9e0b4caa3eb3711633461cdb60174a	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae; g__Oncorhynchus	0.875319045279641	Oncorhynchus mykiss	100	
+6d1dcac39452895eb5b41957b4d95f0a	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.997256734010535	Scomber scombrus	100	
+2dd39e84ee62caff0b6567f3e47ba73d	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Hexagrammidae; g__Hexagrammos	0.814791125812624	Ophiodon elongatus	100	
+4bdde1b9c9143c5bbc037c1c914945d1	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis; s__ornata	0.963931371113863	Pholis ornata	100	Change all Pholis to gunnelus
+abcf5ede977bcff7850e6718a18b1c32	k__Metazoa; p__Chordata; c__Aves; o__Anseriformes; f__Anatidae; g__Anas; s__zonorhyncha	0.99999998444153	Anas platyrhynchos	100	Mallards
+f63bfe2979c541aef7b75e7a83685d73	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.998277476346647	Scomber scombrus	99.4	
+71666ca80d4b3ee68256be273c240e76	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Alosa; s__sapidissima	0.992904030075399	Alosa pseudoharengus	98.8	
+97b93e9b064588821249286464782ffa	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Artedius; s__harringtoni	0.999999672309212	Artedius fenestralis	99.4	
+8908dd490fac683f9dc514a34d73e609	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes	0.999999995630908	Apodichthys flavidus	100	Pacific gunnel
+30201c79d8ff9fb2bb377052a93f7143	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae; g__Salvelinus	0.759356201121828	Salmo salar	99.4	
+8d669564a4474a68763018b50e95e155	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Stichaeidae; g__Lumpenus; s__sagitta	0.903098458891517	Lumpenus sagitta	100	
+282ea87d691b16e07f1a996d4904c65f	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Alosa; s__sapidissima	0.994138317268339	Alosa pseudoharengus	99.4	
+acb5819c8abfde4d7ab43742dbf3c9a9	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Icelinus; s__borealis	0.999995197219954	Icelinus borealis	100	
+c2c5e318efa4599536a03b053d4fdaf9	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Sardinops; s__melanostictus	0.999998518663321	Sardinops melanostictus	100	
+e2b5ac591d1f890ba70dc0cfa277e71e	k__Metazoa; p__Chordata; c__Mammalia; o__Primates; f__Hominidae; g__Homo; s__sapiens	0.998645834481536	Homo sapiens	99.4	
+c3b3844ac25bd6f7b608958a69f79919	k__Metazoa; p__Chordata; c__Actinopteri; o__Pleuronectiformes; f__Pleuronectidae	0.999999999985618	Parophrys vetulus	100	100 percent match to multiple genera
+eeaf4b039ff01357f8082814100de117	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Artedius; s__lateralis	0.999998707007802	Artedius lateralis	100	
+4fb35d136a6e3fc82b9310d842f73a36	k__Metazoa; p__Chordata; c__Actinopteri; o__Labriformes; f__Labridae; g__Tautogolabrus; s__adspersus	0.979222326826853	Tautogolabrus adspersus	100	
+7c311cbec10718ed55f3b8d1903ead4a	k__Metazoa; p__Chordata; c__Actinopteri; o__Gobiiformes; f__Gobiidae; g__Lepidogobius; s__lepidus	0.999999953990682	Lepidogobius lepidus	100	
+84560bb9bb8794ff3c3894c5931a0a02	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Scorpaenichthys; s__marmoratus	0.863869787062051	Scorpaenichthys marmoratus	100	
+849437fe5a55c2f83fb6944b362d7d98	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis; s__ornata	0.89439194084277	Pholis ornata	100	100 percent match to multiple Pholis species
+6f12d9fa02952b0c4bd9e829ec60f3f0	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis	0.998041689511291	Pholis gunnellus	99.4	
+05d57a59b23e55814fa4a24c14392160	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.998609642570067	Scomber scombrus	100	
+0a8189b55915a29c99b7bd43ece4c2f5	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae	0.999999998890431	Salmo salar	98.8	
+1b7278eea35362c7b291b09060f89f8b	k__Metazoa; p__Chordata; c__Actinopteri; o__Uranoscopiformes; f__Ammodytidae; g__Ammodytes	0.99999999561322	Ammodytes	100	
+02f225060afc1c3d958453508ddf900b	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Alosa; s__sapidissima	0.970991455018467	Alosa pseudoharengus	98.8	
+ab75d69e8919838f7f5c299feebbc6c9	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Sebastidae; g__Sebastes	0.945062034203405	Sebastes auriculatus	100	Also 100 match to multiple Sebastes spp
+e23dcdf9660fe6d488615c33a7f51c92	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes	0.999999989144112	Cryptacanthodes aleutensis	100	Pacific wrymouth
+1c391fc1854ff67ce06c6f1016bbb3e9	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Artedius; s__lateralis	0.999979980797547	Artedius lateralis	100	
+95dc2d418d7fe02dacc8ae64b219e167	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Sardinops; s__melanostictus	0.999998490086714	Sardinops sagax	100	
+6241d16741acafb2d7ec938872fb7283	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae	0.709680617515399	Scomber scombrus	100	
+a20bf3aa83de91ec0e54d40f5eb5077b	k__Metazoa; p__Chordata; c__Aves; o__Passeriformes; f__Corvidae; g__Corvus; s__macrorhynchos	0.9915740649861	Corvus pectoralis	100	100 percent match to multiple Corvus
+472c6324b211045b1a58d2ec0db21c5d	k__Metazoa; p__Chordata; c__Actinopteri; o__Blenniiformes	0.964562228337411	Gibbonsia montereyensis	100	Pacific kelpfish
+483509c26a44cbd1b365c6be13b9074c	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Liparidae; g__Polypera; s__greeni	0.999995019618435	Polypera greeni	99.4	
+1f1bc341be31fb0a7e87df410823f63e	k__Metazoa; p__Chordata	1.00000000000001	Epeorus alexandri	91	Mayfly
+235e5d8bcb57fc094f989cead0dbd467	k__Metazoa; p__Chordata; c__Actinopteri; o__Blenniiformes; f__Gobiesocidae; g__Gobiesox; s__maeandricus	0.999999999908226	Gobiesox maeandricus	100	
+67cbbfb4b41f46e51aeb2b71aa2a790d	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Sardinops; s__melanostictus	0.999998400220776	Sardinops melanostictus	99.4	
+61276be96c899296d37fa61bececb902	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Cottus; s__beldingii	0.800217695375301	Cottus cognatus	99.4	
+f80d79be57d052cb3053cd4e76aa05a6	k__Metazoa; p__Chordata; c__Actinopteri; o__Syngnathiformes; f__Syngnathidae; g__Syngnathus; s__leptorhynchus	0.999999999795747	Syngnathus leptorhynchus	100	
+461158f7d69054f44ff1f46f1eebcc53	k__Metazoa; p__Chordata; c__Actinopteri; o__Myctophiformes; f__Myctophidae; g__Diaphus; s__theta	0.999999001586205	Diaphus theta	100	
+337e6407802e0ca3c66a75529d71a70d	k__Metazoa; p__Chordata; c__Actinopteri; o__Gobiiformes; f__Gobiidae; g__Clevelandia; s__ios	0.999999989542033	Clevelandia ios	99.4	
+9b86cf6b3d0491aae37ec90742c9649e	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Liparidae; g__Liparis; s__cyclopus	0.999872494458505	Liparis cyclopus	100	
+147ba784f9bec539c95ed4c758bd6821	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.99453907762006	Scomber scombrus	100	
+baaeff9bb05e595fab82117fcbfe20f0	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis; s__ornata	0.863088171247184	Pholis ornata	99.4	
+95624c4b9ef3577cac9af388d9db16c6	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Stichaeidae; g__Xiphister	0.970225293770662	Xiphister atropurpureus	99.4	
+15dafcc14e740c03cd30274d3344c5cb	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Agonidae; g__Nautichthys; s__oculofasciatus	0.999991029841867	Nautichthys oculofasciatus	100	
+1e8d3e6e7f01947a58ac3cc9aca60a2c	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Triglops; s__pingelii	0.999991393265963	Triglops pingelii	100	
+adc1e1c939b44ddaa4c6f2a05b64080a	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cryptacanthodidae; g__Cryptacanthodes; s__giganteus	0.789840168025243	Cryptacanthodes giganteus	100	
+60fc6397f35a2404a66e5ae7d79fa869	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Stichaeidae	0.969544947488478	Eumesogrammus praecisus	99.4	
+e2b3c333dd4977f92c8f2e0d6ad9d4ab	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes	0.999997235933114	Jordania zonope	100	
+6edc88f63b197ecbe1e4dcb2f4ae98c1	k__Metazoa; p__Chordata; c__Mammalia; o__Primates; f__Hominidae; g__Homo; s__sapiens	0.999775102284156	Homo sapiens	100	
+4c70ede60f2cf48d00c31db7c07ecc2e	k__Metazoa; p__Chordata; c__Actinopteri	0.704583051360838	Epeorus sp.	88.5	
+37808a4e4e3a5c4ca9821bb3c2a1348e	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger	0.998309897045414	Scomber scombrus	99.4	
+5e0130fbb9830ef635e40c7d0cb11b9f	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Agonidae; g__Bathyagonus	0.861894475500954	Agonopsis vulsa	100	
+4e1e843ca740e60e2e8a0a4577239966	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Stichaeidae; g__Anoplarchus	0.998954299495925	Anoplarchus purpurescens	99.4	
+582f73306664fa78af4d8dc8d5750496	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Cottus; s__beldingii	0.89134018407372	Cottus asper	99.4	
+705d124a49c055170eb87b197dec3f26	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Agonidae; g__Blepsias; s__cirrhosus	0.968369191965694	Blepsias cirrhosus	100	
+e90ed8e93ac72f870318822e2cd09d17	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Gasterosteidae; g__Gasterosteus	0.902830336884298	Gasterosteus aculeatus	99.4	
+8f9b4d277ca201a72728f4695877ebe2	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae; g__Salvelinus	0.999632954572603	Salvelinus malma	100	
+a1b9bcd92dde94850370f5384bdf66f9	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Clupea; s__pallasii	0.999999999558398	Clupea pallasii	99.4	
+ece106fa5eaa83f047b27df93666857d	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Stichaeidae	0.999911410514439	Bryozoichthys lysimus	100	
+e9b3d185f5714957b88f06acf8deac14	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Cottus	0.999864997948872	Cottus pollux	99.4	
+69c4c82ecc95757b9c832ce97d645a15	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Cottus	0.999978289765302	Cottus dzungaricus	99.4	
+3ba9bfc1371873e05edeef193c84929c	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Oligocottus; s__maculosus	0.999916511401322	Oligocottus maculosus	99.4	
+866200d00eb39df10997d9b5feabb0c3	k__Metazoa; p__Chordata; c__Mammalia; o__Artiodactyla; f__Cervidae; g__Rangifer; s__tarandus	0.796460744721804	Rangifer tarandus	94.6	
+7eeace7a90bb2fcb9a0c8fc3547231b4	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Oligocottus; s__maculosus	0.976867265075436	Leiocottus hirundo	90	
+53604bb36613c0218f87ee29b7314e7f	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae; g__Oncorhynchus	0.765340017164803	Oncorhynchus keta	99.4	
+23777ed6508ca72dd2549bd9ec93275d	k__Metazoa; p__Chordata; c__Actinopteri; o__Pleuronectiformes; f__Pleuronectidae	0.999999999960986	Platichthys stellatus	100	Also 100 match to Yellowtail
+e63583e6427382d723dbc8ee26f05e60	k__Metazoa; p__Chordata; c__Actinopteri; o__Pleuronectiformes; f__Pleuronectidae	0.999999999912209	Platichthys stellatus	100	Also 100 match to Yellowtail
+8a754db05ad456c7cad0fff0da5a1fd8	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Artedius; s__lateralis	0.999980621691244	Artedius lateralis	100	
+177c957042685d9754bc317807aff7c6	k__Metazoa; p__Chordata; c__Actinopteri; o__Syngnathiformes; f__Syngnathidae; g__Syngnathus; s__leptorhynchus	0.999999997234582	Syngnathus leptorhynchus	99.4	
+965dcaaaf38fcc226ca55d6c2aef385a	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Gasterosteidae	0.99952726526396	Gasterosteus aculeatus	99.4	
+02638842e2056a7e35d027cb13c027dc	k__Metazoa; p__Chordata; c__Actinopteri; o__Uranoscopiformes; f__Ammodytidae; g__Ammodytes	0.999999721940553	Ammodytes	98.8	
+2b3c407a697c06268918a55ce5616e71	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Hemilepidotus; s__papilio	0.925658261721704	Hemilepidotus hemilepidotus	100	
+2bfd2045b173e979d1abf4cbeab871de	k__Metazoa; p__Chordata; c__Aves; o__Anseriformes; f__Anatidae; g__Anas; s__zonorhyncha	0.999523956713966	Mareca falcata	100	or penelope
+1eb3b6c204aa3ad6a31c1c8eef9c293f	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Stichaeidae; g__Anoplarchus	0.999599181194827	Anoplarchus purpurescens	99.4	
+3f66bc1395ee9969902d2532867fb0e4	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Sardinops; s__melanostictus	0.999997879258306	Sardinops sagax	99.4	
+0953f26aa448e10b6e53f2ad5a6276db	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Zoarcidae	0.999378894679478	Lycodopsis pacificus	100	
+b0a7229ac116e055f5a3dbff1dd9eaa4	k__Metazoa; p__Chordata; c__Actinopteri; o__Centrarchiformes; f__Centrarchidae; g__Lepomis; s__gibbosus	0.994382926638366	Lepomis gibbosus	100	
+0c244d50da0695980da41af60320b08c	k__Metazoa; p__Chordata	0.999999999999989	Tripos horridus	100	dinoflagellate
+2e7f3d091b60ed03b123c5caf962cdd9	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Liparidae; g__Liparis	0.999989133244369	Liparis sp.	100	
+b5874ea91365e88560bff6a22bd46f62	k__Metazoa; p__Chordata; c__Actinopteri; o__Pleuronectiformes; f__Pleuronectidae; g__Lepidopsetta; s__polyxystra	0.975944808295699	Lepidopsetta bilineata	100	
+fe90b55dde51813c87920dd297858e4a	k__Metazoa; p__Chordata	1.00000000000001	No match		
+b3ddd6ad72b2d9f211c45a4798670665	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Agonidae; g__Bathyagonus	0.933396400228172	Odontopyxis trispinosa	100	
+05bd9b5534f9f22cf34bcdff39787f7e	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Clupea; s__pallasii	0.999999999671601	Clupea pallasii	99.4	
+74616a35834ee335ede92c7b7166f4ae	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Pholidae; g__Pholis; s__laeta	0.951501453762208	Pholis laeta	100	
+29f695b316258bde937a3912ee192436	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Clupea; s__pallasii	0.99999999941997	Clupea pallasii	99.4	
+41c7111a9b9ef62662a99ec51c0dae85	k__Metazoa; p__Chordata; c__Actinopteri; o__Euteleosteomorpha; f__Embiotocidae; g__Brachyistius; s__frenatus	0.999991450977056	Brachyistius frenatus	100	
+da5b3b523b60e1a62a13bd4ba9f76db6	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Stichaeidae; g__Anoplarchus	0.993072015307134	Anoplarchus purpurescens	100	
+a18bcb7100deea6f8a95ea487b2b94ed	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Sebastidae; g__Sebastes	0.999892296088679	Sebastes sp.	100	
+c9aa0d2716c96b9ce2d708c6a9bd743b	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Stichaeidae; g__Xiphister; s__mucosus	0.862762396041271	Xiphister atropurpureus	99.4	
+b97a574926bd9a42cfeae7de26af96bd	k__Metazoa; p__Chordata; c__Actinopteri; o__Pleuronectiformes; f__Cyclopsettidae; g__Citharichthys; s__stigmaeus	0.999997066461316	Citharichthys stigmaeus	100	
+70a1138682757872555195c15b9d284e	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Alosa; s__sapidissima	0.999365088021603	Alosa sapidissima	100	
+aa74e24621dfbb345b0e188ca40b3ce8	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Hexagrammidae; g__Hexagrammos; s__agrammus	0.901626112501932	Hexagrammos agrammus	100	
+86cf7adc6e5d05e04c179c3e6028cb5f	k__Metazoa; p__Chordata; c__Actinopteri; o__Pleuronectiformes; f__Pleuronectidae	0.999999999891099	Hippoglossus hippoglossus	100	
+047132a8b4596d09bd43b0a70d16962f	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Clinocottus; s__globiceps	0.999998446252476	Clinocottus embryum	98.8	
+7d797f10ff077324ccdef9e7d0b41594	k__Metazoa; p__Chordata; c__Amphibia; o__Caudata; f__Salamandridae; g__Cynops; s__pyrrhogaster	0.813417077519102	Taricha granulosa	100	newt
+ca4626c7dc01d8ad43fd033a28b83c57	k__Metazoa; p__Chordata; c__Actinopteri; o__Gobiiformes; f__Gobiidae; g__Clevelandia; s__ios	0.999999988830254	Clevelandia ios	99.4	
+3cd4557eed29f83930b9f257f9dc919d	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Engraulidae; g__Engraulis; s__mordax	0.9999999999594	Engraulis mordax	100	
+b88062c233de4432e53e6ebfbfe05c44	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Liparidae; g__Liparis	0.999971636621212	Liparis sp.	98	
+e6d24e5de951753ccc14f0cdc3901a50	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Sebastidae	0.999999566042964	Sebastes sp.	100	
+742745c807b13cb5ec15c38daf14b907	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Sebastidae; g__Sebastes	0.999787698771941	Sebastes sp.	100	
+82b8dfc4213f5447f2dd03d54d6cd988	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Oligocottus; s__maculosus	0.973166136637328	Leiocottus hirundo	90	
+bbbbbbbddb3bc4edac0017e4e7b79de1	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Clupeidae; g__Alosa; s__sapidissima	0.996060680578484	Alosa pseudoharengus	99.4	
+4bcfe9e5819f4367cb16e64939556d48	k__Metazoa; p__Chordata; c__Mammalia; o__Artiodactyla; f__Bovidae; g__Ovis; s__aries	0.847035421589341	Ovis aries	100	
+2dab3068cb6092ddac37141ccf003888	k__Metazoa; p__Chordata; c__Mammalia; o__Carnivora; f__Canidae; g__Canis; s__lupus familiaris	0.990252742472648	Canis lupus familiaris	100	
+e78ec55fe87287ffbd7bb5a951d66260	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Hexagrammidae; g__Oxylebius; s__pictus	0.996992536372871	Oxylebius pictus	100	
+04ca853e6db400c11f5a4cdc290564dc	k__Metazoa; p__Chordata	1	Epeorus bifurcatus	83	Mayfly
+b02f9ddcc57e5999dd7eacbfc286dfdb	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae	0.924060918864435	Myoxocephalus aenaeas	99.2	
+6f17dcda73a97a0a67e4a99eae5805a7	k__Metazoa; p__Chordata	1	No match		
+91f00a826ea34891d45b1f4734b4e5f2	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Clinocottus; s__acuticeps	0.99999999999946	Clinocottus acuticeps	100	
+4e90c0533aaaa7cdf79c415393cd0131	k__Metazoa; p__Chordata; c__Mammalia; o__Rodentia; f__Castoridae; g__Castor; s__canadensis	0.999998518541876	Castor canadensis	100	
+ca832836a6d3779b8567fe51ae91f448	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Agonidae	0.999999796546656	Bathyagonus infraspinatus	99.4	
+0e8c333b11e9b1808664fcd2f3ea876d	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Liparidae; g__Liparis	0.977190192616971	Liparis sp.	100	
+670e024b555a50f7d9f04b9365faedc5	k__Metazoa; p__Chordata; c__Aves; o__Anseriformes; f__Anatidae; g__Anas; s__zonorhyncha	0.999894886421495	Bucephala albeola	100	bufflehead
+95489e32db8db7b3cf979ede37d0ee1d	k__Metazoa; p__Chordata	1	No match		
+c2366637694baa3e3d236c6269221e37	k__Metazoa; p__Chordata	0.999999999999999	Epeorus bifurcatus	83	
+581c5adab48affa2978709fb3dd922a8	k__Metazoa; p__Chordata; c__Actinopteri	0.99947773054536	Rhinogobiops nicholsii	100	Pacific goby
+3b23e9d30ce7c158a640c482f4a97db8	k__Metazoa; p__Chordata	0.999999999999997	No match		
+5af605dd46fac543e0d15b4c8ac4c1e3	k__Metazoa; p__Chordata	0.999999999999998	No match		
+3b17a3ad0d4ab16978e2add435feaecb	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Percidae; g__Perca; s__sp. BD-2002	0.996803567965572	Perca flavescens	100	
+c54ebf5c5771ac873c426e88708393a0	k__Metazoa; p__Chordata; c__Actinopteri	0.999983220836795	Atherinops affinis	100	Pacific silverside
+c5acec062c0395c23de4fffc39c10889	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Cottus; s__beldingii	0.894146526592914	Cottus asper	98	
+1b4a75da0abab4f39b4d32dd8a931a9e	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Stichaeidae; g__Phytichthys; s__chirus	0.986838887318924	Phytichthys chirus	98.1	
+92a8f5c02232a670ffe6364103d131ae	k__Metazoa; p__Chordata; c__Actinopteri; o__Gadiformes; f__Gadidae; g__Gadus	0.999802519312237	Gadus chalcogrammus	99.4	
+b629ca224f4773e64c6c61203aa1d079	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Oligocottus; s__maculosus	0.999899497315379	Oligocottus maculosus	99.4	
+0d1c6c8ac2d7b222a19cc04b7950e5ac	k__Metazoa; p__Chordata; c__Actinopteri; o__Uranoscopiformes; f__Ammodytidae; g__Ammodytes	0.99999991783919	Ammodytes	99	
+a9983ca5b5889d749212df0721988704	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae	0.724158027175794	Scomber scombrus	100	
+17d81ebe20dc706eb0def5edb02f46f9	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Cottidae; g__Clinocottus; s__globiceps	0.971309316150089	Clinocottus embryum	95	
+de51b7d1e6579dd4c56230d6b383b45f	k__Metazoa; p__Chordata; c__Actinopteri; o__Clupeiformes; f__Engraulidae; g__Engraulis; s__mordax	0.999999999453536	Engraulis mordax	99.4	
+5b46406193b5d4326e350c366df7e30a	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes; f__Gasterosteidae; g__Gasterosteus	0.731256676499864	Gasterosteus aculeatus	95.8	
+78937dc38efd73fd01badb2682221b50	k__Metazoa; p__Chordata; c__Aves; o__Anseriformes; f__Anatidae; g__Anas; s__zonorhyncha	0.999653166478025	Melanitta perspicillata	100	
+68c667d1c0c8f8264dc012fef3d44916	k__Metazoa; p__Chordata; c__Actinopteri; o__Gadiformes; f__Gadidae	0.999999826249085	Microgadus proximus	100	Pacific tomcod
+810c87b7f3dd851438df91e5ffb36d22	k__Metazoa; p__Chordata; c__Actinopteri; o__Esociformes; f__Esocidae; g__Esox; s__americanus	0.924050423111014	Esox lucius	100	
+07df5a75935b226bfe8118371c6a24cf	k__Metazoa; p__Chordata	0.999999999999988	Tripos horridus	98.7	dinoflagellate
+4e9250283907b7eadcd76fd6d15add66	k__Metazoa; p__Chordata	1.00000000000001	No match		
+068ebca9fb464eaf8c758b1fe7349df0	k__Metazoa; p__Chordata; c__Actinopteri; o__Pleuronectiformes; f__Cyclopsettidae; g__Citharichthys; s__stigmaeus	0.999997278210766	Citharichthys stigmaeus	99.4	
+2cf61ec0c7099ef665080595b251c646	k__Metazoa; p__Chordata	1.00000000000001	No match		
+444efbf95eca8d5e3b7951a79213dd71	k__Metazoa; p__Chordata; c__Actinopteri; o__Scombriformes; f__Scombridae; g__Rastrelliger; s__brachysoma	0.96293312439834	Scomber scombrus	100	
+faa7f993ad17fc938be612aa89acc6c6	k__Metazoa; p__Chordata; c__Mammalia; o__Rodentia	0.833341142681753	Castor fiber birulai	90.6	
+6d56e546f389009447bee6e9875c3129	k__Metazoa; p__Chordata; c__Actinopteri; o__Perciformes	0.999990739818352	Rhamphocottus richardsonii	100	
+fa7a1b639dee3a710fe964dbb7a20ec9	k__Metazoa; p__Chordata; c__Actinopteri; o__Cichliformes; f__Cichlidae; g__Oreochromis; s__niloticus	0.995951209313547	Oreochromis niloticus	100	
+28be19fe79c7e6c3b6bd8ff3c81df971	k__Metazoa; p__Chordata; c__Actinopteri; o__Euteleosteomorpha; f__Embiotocidae; g__Cymatogaster; s__aggregata	0.999804218839391	Cymatogaster aggregata	97.6	
+cb9cd62294c69b13a291d655357f490e	k__Metazoa; p__Chordata; c__Aves; o__Anseriformes; f__Anatidae; g__Anas; s__zonorhyncha	0.999054719066464	Bucephala islandica	100	
+d365c6ec59d2f0f324c43051eebdba3f	k__Metazoa; p__Chordata	0.999999999999996	No match		
+a26ce1dcab853219dacd05498f215fef	k__Metazoa; p__Chordata	1	No match		
+2f22d35497cbb3000d208a742d9e6911	k__Metazoa; p__Chordata	1.00000000000001	No match		
+297d0fb97f0d8b00a20e8438ced54f61	k__Metazoa; p__Chordata; c__Actinopteri; o__Cypriniformes; f__Cyprinidae; g__Carassius; s__sp. 'Ginbuna'	0.895299020516894	Cyprinus carpio haematopterus x Megalobrama amblycephala	100	
+b634195d7640ca3631843dd4ee650b59	k__Metazoa; p__Chordata	1.00000000000001	No match		
+2231c2c3d2c1c8b03c6f91c0548fdc07	k__Metazoa; p__Chordata; c__Actinopteri; o__Salmoniformes; f__Salmonidae; g__Prosopium; s__cylindraceum	0.706145633118979	Coregonus artedi	99.4	cisco
+c7faf436f31da27dd590c43a8a0d1e94	k__Metazoa; p__Chordata; c__Actinopteri; o__Osmeriformes; f__Osmeridae; g__Hypomesus	0.910403562700603	Hypomesus pretiosus	100	Pacific surfsmelt
+400b7ce9eedab22e919b96aa272a95f2	k__Metazoa; p__Chordata; c__Mammalia; o__Carnivora; f__Canidae; g__Vulpes; s__vulpes	0.999971997438552	Vulpes vulpes	100	red fox
+a575e028d706654e0f9581f2ee5961ac	k__Metazoa; p__Chordata; c__Actinopteri; o__Pleuronectiformes; f__Cyclopsettidae; g__Citharichthys; s__sordidus	0.999993649638482	Citharichthys sordidus	100	Pacific sanddab
