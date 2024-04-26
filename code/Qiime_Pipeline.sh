@@ -24,7 +24,7 @@ qiime tools import \
 #COI 
 qiime tools import \
 --type 'SampleData[PairedEndSequencesWithQuality]' \
---input-path pe33-COImanifest \
+--input-path pe33-DOTCOImanifest \
 --input-format PairedEndFastqManifestPhred33V2 \
 --output-path COI-combined-demux.qza
 
@@ -37,7 +37,7 @@ qiime demux summarize \
 #COI
 qiime demux summarize \
   --i-data COI-combined-demux.qza \
-  --o-visualization COI-SAB-demux.qzv
+  --o-visualization COI-DOT-demux.qzv
 
   
  ## OPTIONAL: filter out samples with less than 100 reads (can set this to any number) ##
@@ -66,49 +66,12 @@ done
 '
 
 
-#can also trim primers/adapters in Qiime with cutadapt but we will skip this
+#can also trim primers/adapters in Qiime with cutadapt
 
-qiime cutadapt trim-paired \
---i-demultiplexed-sequences 16S-combined-demux.qza \
---p-cores 40 \
---p-front-f AGCGYAATCACTTGTCTYTTAA \
---p-front-r CRBGGTCGCCCCAACCRAA \
---p-error-rate 0.11 \
---p-discard-untrimmed \
---p-match-read-wildcards \
---p-match-adapter-wildcards \
---p-minimum-length 40 \
---o-trimmed-sequences 16sGul-demux-trimmed.qza \
---output-dir  trimmed \
---verbose
-#visualize the trimming results
-qiime demux summarize --i-data 16s-demux-trimmed.qza \
---o-visualization 16s-trimmed-visual
-
-'
-=== Summary ===
-
-Total read pairs processed:          5,256,200
-  Read 1 with adapter:               3,544,875 (67.4%)
-  Read 2 with adapter:               3,531,749 (67.2%)
-
-== Read fate breakdown ==
-Pairs that were too short:                   0 (0.0%)
-Pairs discarded as untrimmed:        1,812,812 (34.5%)
-Pairs written (passing filters):     3,443,388 (65.5%)
-
-Total basepairs processed: 1,650,284,162 bp
-  Read 1:   825,252,162 bp
-  Read 2:   825,032,000 bp
-Total written (filtered):    943,244,238 bp (57.2%)
-  Read 1:   466,537,198 bp
-  Read 2:   476,707,040 bp
-'
-
-MiFishU-F - these primers target ~180bp of the 12S rDNA region
-5 GTCGGTAAAACTCGTGCCAGC 3
+#MiFishU-F - these primers target ~180bp of the 12S rDNA region
+#5 GTCGGTAAAACTCGTGCCAGC 3
 #MiFishU-R
-3 GTTTGACCCTAATCTATGGGGTGATAC 5 > need to reverse this so its read 5 prime to 3 prime in cutadapt
+#3 GTTTGACCCTAATCTATGGGGTGATAC 5 > need to reverse this so its read 5 prime to 3 prime in cutadapt
 
 #12S MiFish primers
 qiime cutadapt trim-paired \
@@ -128,20 +91,70 @@ qiime cutadapt trim-paired \
 qiime demux summarize --i-data 12s-demux-trimmed-2023-test2.qza \
 --o-visualization 12s-trimmed-visual
 
+#mICOIintF GGWACWGGWTGAACWGTWTAYCCYCC
+#jgHCO2198 TAIACYTCIGGRTCICCRAARAAYCA
+
+#COI Leray primers
+qiime cutadapt trim-paired \
+--i-demultiplexed-sequences COI-combined-demux.qza \
+--p-cores 40 \
+--p-front-f GGWACWGGWTGAACWGTWTAYCCYCC \
+--p-front-r TAIACYTCIGGRTCICCRAARAAYCA \
+--p-error-rate 0.15 \
+--p-discard-untrimmed \
+--p-match-read-wildcards \
+--p-match-adapter-wildcards \
+--p-minimum-length 50 \
+--o-trimmed-sequences coi-demux-dot-trimmed.qza \
+--output-dir trimmed \
+--verbose
+
+'example output from COI
+=== Summary ===
+
+Total read pairs processed:            235,239
+  Read 1 with adapter:                 234,765 (99.8%)
+  Read 2 with adapter:                 232,812 (99.0%)
+
+== Read fate breakdown ==
+Pairs that were too short:              44,105 (18.7%)
+Pairs discarded as untrimmed:            2,599 (1.1%)
+Pairs written (passing filters):       188,535 (80.1%)
+'
+#visualize the trimming results
+qiime demux summarize --i-data coi-demux-dot-trimmed.qza \
+--o-visualization coi-trimmed-visual
+
+
 #denoise using dada2 which infers ASVs 
 #Note: using --p-n-threads = 0 will use all threads available 
 ### for 16S use --p-trunc-len-f 125 and --p-trunc-len-r 125; 12S use 116 and 108 ###
 # can add --p-min-overlap 12 or some other number if need be
-#16S
+#COI
 qiime dada2 denoise-paired \
---i-demultiplexed-seqs COI-DOT-combined-demux.qza  \
---p-trunc-len-f  125 \
---p-trunc-len-r  125 \
+--i-demultiplexed-seqs coi-demux-dot-trimmed.qza  \
+--p-trunc-len-f  260 \
+--p-trunc-len-r  260 \
 --p-n-threads 0 \
 --p-n-reads-learn 3000000 \
 --p-pooling-method independent \
---output-dir trimmed/dada2out \
+--output-dir dada2out \
 --verbose
+
+
+#Try COI with some 5' trimming too - this worked better in this case!
+qiime dada2 denoise-paired \
+--i-demultiplexed-seqs coi-demux-dot-trimmed.qza  \
+--p-trunc-len-f  240 \
+--p-trunc-len-r  240 \
+--p-trim-left-f 5 \
+--p-trim-left-r 5 \
+--p-n-threads 0 \
+--p-n-reads-learn 3000000 \
+--p-pooling-method independent \
+--output-dir dada2out_test2 \
+--verbose
+
 
 #12S - trying some different r-len truncs
 qiime dada2 denoise-paired \
@@ -159,8 +172,8 @@ qiime dada2 denoise-paired \
 #Generate summaries of denoising stats and feature table
 #12S
 qiime feature-table summarize \
-  --i-table DOT12S-denoised-Test2/table.qza \
-  --o-visualization DOT12S-denoised-Test2/table.qzv \
+  --i-table dada2out/table.qza \
+  --o-visualization dada2out/table.qzv \
   --m-sample-metadata-file 2023-DOT-metadata.tsv &&
 qiime feature-table tabulate-seqs \
   --i-data DOT12S-denoised-Test2/representative_sequences.qza \
@@ -168,6 +181,18 @@ qiime feature-table tabulate-seqs \
 qiime metadata tabulate \
   --m-input-file DOT12S-denoised-Test2/denoising_stats.qza \
   --o-visualization DOT12S-denoised-Test2/denoising-stats.qzv
+  
+#COI
+qiime feature-table summarize \
+  --i-table dada2out/table.qza \
+  --o-visualization dada2out/table.qzv \
+  --m-sample-metadata-file 2023-DOT-metadata.tsv &&
+qiime feature-table tabulate-seqs \
+  --i-data dada2out/representative_sequences.qza \
+  --o-visualization dada2out/rep-seqs.qzv &&
+qiime metadata tabulate \
+  --m-input-file dada2out/denoising_stats.qza \
+  --o-visualization dada2out/denoising-stats.qzv
   
   
  qiime tools view /path_to_output_folder/filename_rep_seqs.qzv  ## export the ASV fasta file from the view for input into FuzzyID2 and BLAST
@@ -177,11 +202,11 @@ qiime metadata tabulate \
  ### export results to biom formatted file
 qiime tools export \
 --input-path dada2out/table.qza \
---output-path dada2out/SAB2216S_filtered_table_biom ##specifying a folder output here, this tool will automatically export a file called 'feature-table.biom' to this folder
+--output-path dada2out/DOTCOI_filtered_table_biom ##specifying a folder output here, this tool will automatically export a file called 'feature-table.biom' to this folder
 
 ### convert biom to tsv
-biom convert -i dada2out/SAB2216S_filtered_table_biom/feature-table.biom \
--o dada2out/SAB2216S_filtered_table_biom/SAB2216S_feature_table_export.tsv \
+biom convert -i dada2out_test2/DOTCOI_filtered_table_biom/feature-table.biom \
+-o dada2out_test2/DOTCOI_filtered_table_biom/DOTCOI_feature_table_export.tsv \
 --to-tsv
 
 ### OPTIONAL filtering after exporting to tsv
@@ -204,7 +229,7 @@ biom convert -i dada2out/SAB2216S_filtered_table_biom/feature-table.biom \
   --p-sampling-depth 1500 \
   --p-n-jobs-or-threads auto \
   --m-metadata-file  ../2023-DOT-metadata.tsv \
-  --output-dir 12S-core-metrics-results
+  --output-dir COI-core-metrics-results
  
 ####################
 ######TAXONOMY######
