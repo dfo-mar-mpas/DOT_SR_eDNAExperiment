@@ -171,7 +171,46 @@ shan <- data.frame(diversity(commat2, index="shannon"))
 mean.shan <- aggregate(. ~ substr(rownames(shan), 1, 3), shan, mean, na.rm = TRUE)
 
 
+#####################################################################
+##Remove first 2-3 weeks of Smith Root which sampled a far larger volume of water by accident 
+head(coi.commat2)
+coi.commat3 <- coi.commat2[-c(28:30),]
 
+
+dot.nmds.coi2 <-metaMDS(coi.commat3, distance="bray", k=12, trymax = 200, maxit=500)
+plot(dot.nmds.coi2) #this is not very informative without labels!
+
+groups2 <- groups[-c(28:29)]
+
+#plot NMDS with ggplot to look nicer
+data.scores.coi2 <- as.data.frame(scores(dot.nmds.coi2,"sites")) %>%
+  mutate(ID=rownames(.), group=groups2)
+species.scores.coi2 <- as.data.frame(scores(dot.nmds.coi2, "species"))  #Using the scores function from vegan to extract the species scores and convert to a data.frame
+species.scores.coi2$species <- rownames(species.scores.coi2) 
+
+hull.data.coi2 <- data.scores.coi2 %>%
+  as.data.frame() %>%
+  group_by(group) %>%
+  slice(chull(x=NMDS1,y=NMDS2))
+
+
+# regular ggplot
+p3 <- ggplot() +
+  geom_polygon(data=hull.data.coi2,aes(x=NMDS1,y=NMDS2,color=group, fill=group),alpha=0.20) + # add the hulls
+  geom_text(data=species.scores.coi2,aes(x=NMDS1,y=NMDS2,label=species),alpha=0.5) +  # add the sp.labels or remove this if too messy
+  geom_point(data=data.scores.coi2,aes(x=NMDS1,y=NMDS2,colour=group),size=3) +
+  #scale_colour_manual()
+  geom_text(data=data.scores.coi2,aes(x=NMDS1,y=NMDS2, label=ID), size=6)+
+  #scale_color_gradient(low="blue", high="black")+
+  scale_colour_brewer(palette = "Accent") +
+  coord_equal()+
+  #scale_shape_manual(values=c(15,7,18,16,10,8,17))+
+  geom_text(aes(x=Inf,y=-Inf,hjust=1.05,vjust=-0.5,label=paste("Stress =",round(dot.nmds.coi2$stress,3),"k =",dot.nmds.coi2$ndim)))+
+  nmdstheme
+p3
+
+
+ggsave(filename = "DOT_NMDS_COI.png", plot = p2, device = "png", path = "figures/", width = 16, height=12, units = "in", dpi=400, bg = "white")
 
 
 

@@ -7,9 +7,12 @@ conc <- read.csv("data/eDNA_Concentrations.csv", header = T) %>% group_by(Method
 
 ggplot(conc, aes(x=DurationPreserved, y=as.numeric(Concentration), color=Method))+
   geom_point(size=3)+
-  geom_smooth()+
+  geom_smooth(se = F)+
   ylab(label = "DNA concentration ng/ul")+
   xlab(label = "Days preserved")+
+  expand_limits(x=0,y=0)+
+  #scale_x_continuous(expand=c(0,0), limits=c(0,NA))+
+  scale_y_continuous(expand=c(0,0), limits=c(0,NA))+
   theme_bw()+
   theme(text=element_text(size=18))
 
