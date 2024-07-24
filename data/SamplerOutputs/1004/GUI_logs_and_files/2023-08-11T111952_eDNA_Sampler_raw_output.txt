@@ -1,0 +1,62 @@
+CCLK,2023-08-11T11:20:01
+
+>CTRIG,0,1,0,,,,,,,,,
+
+>ISTAT,EDNA-SA,3.01,3.09,0,IDLE,NA/0/NA
+
+>CSET,13,20,1,0,20000,0
+
+>CSTAT,7,1/0/0,1/0/0,1/0/0,1/0/0,1/0/0,1/0/0,1/0/0,1/0/0,1/0/0,4000000,500000,200000,1200000,250000
+
+>ERR: Could not open trigger file 1
+RUN,PROTOCOL,SAMPLE_1,ACK
+Started Run Task
+Opened Eng and data files
+Created Pressure Monitor Task
+Created Script Task
+
+>0,0.00000,-0.13021,30000,0,0.000000,NA
+1,0.00000,-0.13021,30000,0,0.000000,NA
+2,0.00000,-0.13021,30000,0,0.000000,NA
+3,0.00000,-0.13021,30000,0,0.000000,NA
+ERR: Could not open settings file 1
+RUN,FIN
+ERR: Could not open trigger file 1
+ERR: Could not open script file prime_allf_cassette.txt
+RUN,NACK[2][1]
+
+>ISTAT,EDNA-SA,3.01,3.09,0,IDLE,NA/0/NA
+
+>ERR: Could not open trigger file 1
+ERR: Could not open script file prime_allf.txt
+RUN,NACK[2][1]
+
+>ERR: Could not open trigger file 1
+ERR: Could not open script file prime_allf.txt
+RUN,NACK[2][1]
+
+>ERR: Could not open trigger file 1
+ERR: Could not open script file prime_allf_cassette.txt
+RUN,NACK[2][1]
+
+>EXIT,NACK[0][3]
+
+>ERR: Could not open trigger file 1
+RUN,PROTOCOL,SAMPLE_1,ACK
+Started Run Task
+Opened Eng and data files
+Created Pressure Monitor Task
+Created Script Task
+
+>0,0.00000,-0.13021,30000,0,0.000000,NA
+1,0.00000,-0.13021,30000,0,0.000000,NA
+2,0.00000,-0.13021,30000,0,0.000000,NA
+3,0.00000,-0.13021,30000,0,0.000000,NA
+ERR: Could not open settings file 1
+RUN,FIN
+ISTAT,EDNA-SA,3.01,3.09,0,IDLE,NA/0/NA
+
+>INIT: Device Initialized
+Init attempts: 1
+
+>	

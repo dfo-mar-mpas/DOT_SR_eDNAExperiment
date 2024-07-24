@@ -1,0 +1,303 @@
+Boot Time: 20230821T121337
+2023-08-21T12:14:00: CTRIG,1,7,0,2023-05-31T11:52:32,2023-06-01T11:52:32,2023-06-02T11:52:32,2023-06-03T11:52:32,2023-06-04T11:52:32,2023-06-05T11:52:32,2023-06-06T11:52:32,2023-06-07T11:52:32,2023-06-08T11:52:32
+2023-08-21T12:14:00: ISTAT,EDNA-SA,3.01,3.09,0,IDLE,NA/0/NA
+2023-08-21T12:14:00: CSET,14,20,2,0,20000,0
+2023-08-21T12:14:00: CSTAT,4,5/54000/3,1/0/0,1/0/0,1/0/0,1/0/0,1/0/0,1/0/0,1/0/0,1/0/0,3898000,360000,191000,1020000,191000
+2023-08-21T12:14:20: LS,/logs,ACK
+2023-08-21T12:14:57: LS,/data,ACK
+2023-08-21T12:15:29: ISTAT,EDNA-SA,3.01,3.09,0,IDLE,NA/0/NA
+2023-08-21T12:16:00: ISTAT,EDNA-SA,3.01,3.09,0,IDLE,NA/0/NA
+2023-08-21T12:16:01: RUN,PROTOCOL,SAMPLE_2,ACK
+2023-08-21T12:16:05: Parsing script: mq_clean.txt
+2023-08-21T12:16:05: #eDNA Sampler Flush Tree, V3, FP-0003-02
+2023-08-21T12:16:05: SPEED,10000
+2023-08-21T12:16:05: SPEED2023-08-21T12:16:05: PROTOCOL,FLUSH,START,0
+2023-08-21T12:16:05: PROTOCOL2023-08-21T12:16:05: VALVE_SET,2
+2023-08-21T12:16:05: VALVE_SET2023-08-21T12:16:05: PAUSE,2
+2023-08-21T12:16:05: PAUSE2023-08-21T12:16:07: HOME
+2023-08-21T12:16:07: HOME2023-08-21T12:16:07: VALVE_SET,0
+2023-08-21T12:16:07: VALVE_SET2023-08-21T12:16:07: PAUSE,2
+2023-08-21T12:16:09: PAUSE2023-08-21T12:16:09: #MILLI-Q FLUSH OF TREE OUT INLET, 6 mL, [21,20], [2]
+2023-08-21T12:16:09: PUMPC,MQ,3000,2,21/20,2
+2023-08-21T12:16:52: PUMPC2023-08-21T12:16:52: PROTOCOL,FLUSH,STOP,0
+2023-08-21T12:16:52: PROTOCOL2023-08-21T12:16:52: PAUSE,2
+2023-08-21T12:16:52: PAUSE2023-08-21T12:16:52: VALVE_SET,0
+2023-08-21T12:16:54: VALVE_SET2023-08-21T12:16:54: Parsing script: sam_flush.txt
+2023-08-21T12:16:54: #eDNA Sampler Inlet Sample Water Flush, V3, FP-0003-02
+2023-08-21T12:16:54: SPEED,10000
+2023-08-21T12:16:54: SPEED2023-08-21T12:16:54: PROTOCOL,FLUSH,START,0
+2023-08-21T12:16:54: PROTOCOL2023-08-21T12:16:54: VALVE_SET,2
+2023-08-21T12:16:54: VALVE_SET2023-08-21T12:16:54: PAUSE,2
+2023-08-21T12:16:54: PAUSE2023-08-21T12:16:54: HOME
+2023-08-21T12:16:54: HOME2023-08-21T12:16:54: VALVE_SET,0
+2023-08-21T12:16:54: VALVE_SET2023-08-21T12:16:54: PAUSE,2
+2023-08-21T12:16:54: PAUSE2023-08-21T12:16:54: #OUTLET SEAWATER FLUSH, 3 mL, [2], [20/22]
+2023-08-21T12:16:54: PUMPC,SAM,3000,1,2,20/22
+2023-08-21T12:17:38: PUMPC2023-08-21T12:17:38: #INLET SEAWATER FLUSH, 6 mL, [2], [2]
+2023-08-21T12:17:38: PUMPC,SAM,3000,2,2,2
+2023-08-21T12:18:56: WARN: Stable pressure timeout occurred
+2023-08-21T12:19:09: PUMPC2023-08-21T12:19:09: PROTOCOL,FLUSH,STOP,0
+2023-08-21T12:19:09: PROTOCOL2023-08-21T12:19:09: PAUSE,2
+2023-08-21T12:19:09: PAUSE2023-08-21T12:19:09: VALVE_SET,0
+2023-08-21T12:19:09: VALVE_SET2023-08-21T12:19:09: Parsing script: f2_sam.txt
+2023-08-21T12:19:09: #eDNA Sampler Filter 2 Capture, 125 mL, V3, FP-0003-02
+2023-08-21T12:19:09: SPEED,DEFAULT
+2023-08-21T12:19:09: SPEED2023-08-21T12:19:09: VALVE_SET,2
+2023-08-21T12:19:09: VALVE_SET2023-08-21T12:19:09: PAUSE,2
+2023-08-21T12:19:09: PAUSE2023-08-21T12:19:09: HOME
+2023-08-21T12:19:09: HOME2023-08-21T12:19:09: VALVE_SET,0
+2023-08-21T12:19:09: VALVE_SET2023-08-21T12:19:09: PAUSE,2
+2023-08-21T12:19:09: PAUSE2023-08-21T12:19:09: PROTOCOL,SAMPLE,START,2
+2023-08-21T12:19:16: PROTOCOL2023-08-21T12:19:16: SPEED,10000
+2023-08-21T12:19:16: SPEED2023-08-21T12:19:16: #FILTER 2 CAPTURE, 5 TIMES, [2],[25,5,22]
+2023-08-21T12:19:16: PUMPC,SAM,3000,5,2,25/5/22
+2023-08-21T12:19:49: WARN: Stable pressure timeout occurred
+2023-08-21T12:19:49: Pressure Threshold Reached
+2023-08-21T12:20:16: WARN: Stable pressure timeout occurred
+2023-08-21T12:20:16: Reduced pump speed to 8000
+2023-08-21T12:20:16: Pressure Threshold Reached
+2023-08-21T12:20:40: WARN: Stable pressure timeout occurred
+2023-08-21T12:20:40: Reduced pump speed to 6400
+2023-08-21T12:20:40: Pressure Threshold Reached
+2023-08-21T12:21:03: WARN: Stable pressure timeout occurred
+2023-08-21T12:21:03: Reduced pump speed to 5120
+2023-08-21T12:21:03: Pressure Threshold Reached
+2023-08-21T12:21:26: WARN: Stable pressure timeout occurred
+2023-08-21T12:21:26: Reduced pump speed to 4096
+2023-08-21T12:21:26: Pressure Threshold Reached
+2023-08-21T12:21:50: WARN: Stable pressure timeout occurred
+2023-08-21T12:21:50: Reduced pump speed to 3276
+2023-08-21T12:21:50: Pressure Threshold Reached
+2023-08-21T12:22:13: WARN: Stable pressure timeout occurred
+2023-08-21T12:22:13: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:22:13: Pressure Threshold Reached
+2023-08-21T12:22:37: WARN: Stable pressure timeout occurred
+2023-08-21T12:22:37: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:22:37: Pressure Threshold Reached
+2023-08-21T12:23:00: WARN: Stable pressure timeout occurred
+2023-08-21T12:23:00: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:23:00: Pressure Threshold Reached
+2023-08-21T12:23:23: WARN: Stable pressure timeout occurred
+2023-08-21T12:23:23: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:23:23: Pressure Threshold Reached
+2023-08-21T12:23:47: WARN: Stable pressure timeout occurred
+2023-08-21T12:23:47: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:23:47: Pressure Threshold Reached
+2023-08-21T12:24:10: WARN: Stable pressure timeout occurred
+2023-08-21T12:24:10: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:24:10: Pressure Threshold Reached
+2023-08-21T12:24:33: WARN: Stable pressure timeout occurred
+2023-08-21T12:24:33: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:24:33: Pressure Threshold Reached
+2023-08-21T12:24:57: WARN: Stable pressure timeout occurred
+2023-08-21T12:24:57: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:24:57: Pressure Threshold Reached
+2023-08-21T12:25:20: WARN: Stable pressure timeout occurred
+2023-08-21T12:25:20: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:25:20: Pressure Threshold Reached
+2023-08-21T12:25:44: WARN: Stable pressure timeout occurred
+2023-08-21T12:25:44: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:25:44: Pressure Threshold Reached
+2023-08-21T12:26:07: WARN: Stable pressure timeout occurred
+2023-08-21T12:26:07: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:26:07: Pressure Threshold Reached
+2023-08-21T12:26:30: WARN: Stable pressure timeout occurred
+2023-08-21T12:26:30: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:26:30: Pressure Threshold Reached
+2023-08-21T12:26:54: WARN: Stable pressure timeout occurred
+2023-08-21T12:26:54: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:26:54: Pressure Threshold Reached
+2023-08-21T12:27:17: WARN: Stable pressure timeout occurred
+2023-08-21T12:27:17: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:27:17: Pressure Threshold Reached
+2023-08-21T12:27:41: WARN: Stable pressure timeout occurred
+2023-08-21T12:27:41: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:27:41: Pressure Threshold Reached
+2023-08-21T12:28:04: WARN: Stable pressure timeout occurred
+2023-08-21T12:28:04: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:28:04: Pressure Threshold Reached
+2023-08-21T12:28:27: WARN: Stable pressure timeout occurred
+2023-08-21T12:28:27: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:28:27: Pressure Threshold Reached
+2023-08-21T12:28:51: WARN: Stable pressure timeout occurred
+2023-08-21T12:28:51: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:28:51: Pressure Threshold Reached
+2023-08-21T12:29:14: WARN: Stable pressure timeout occurred
+2023-08-21T12:29:14: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:29:14: Pressure Threshold Reached
+2023-08-21T12:29:37: WARN: Stable pressure timeout occurred
+2023-08-21T12:29:37: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:29:37: Pressure Threshold Reached
+2023-08-21T12:30:01: WARN: Stable pressure timeout occurred
+2023-08-21T12:30:01: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:30:01: Pressure Threshold Reached
+2023-08-21T12:30:24: WARN: Stable pressure timeout occurred
+2023-08-21T12:30:24: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:30:24: Pressure Threshold Reached
+2023-08-21T12:30:48: WARN: Stable pressure timeout occurred
+2023-08-21T12:30:48: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:30:48: Pressure Threshold Reached
+2023-08-21T12:31:11: WARN: Stable pressure timeout occurred
+2023-08-21T12:31:11: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:31:11: Pressure Threshold Reached
+2023-08-21T12:31:34: WARN: Stable pressure timeout occurred
+2023-08-21T12:31:34: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:31:34: ERR: Stroke timeout occurred, fluidic blockage
+2023-08-21T12:31:58: WARN: Stable pressure timeout occurred
+2023-08-21T12:31:58: ERR: Could not translate line PUMPC
+2023-08-21T12:31:58: SPEED,DEFAULT
+2023-08-21T12:31:58: SPEED2023-08-21T12:31:58: #FILTER 2 CAPTURE, 36 TIMES, [2],[25,5,22]
+2023-08-21T12:31:58: PUMPC,SAM,3000,36,2,25/5/22
+2023-08-21T12:31:58: ERR: Cannot pump, excessive internal pressure in system
+2023-08-21T12:31:58: ERR: Could not translate line PUMPC
+2023-08-21T12:31:58: VALVE_SET,2
+2023-08-21T12:31:58: VALVE_SET2023-08-21T12:31:58: PUMP,DRW,SAM,2000
+2023-08-21T12:31:58: ERR: Cannot pump, excessive internal pressure in system
+2023-08-21T12:31:58: ERR: Could not translate line PUMP
+2023-08-21T12:31:58: VALVE_SET,25,5,22
+2023-08-21T12:31:58: VALVE_SET2023-08-21T12:31:58: PUMP,INJ,SAM,2000
+2023-08-21T12:31:58: ERR: Cannot pump, excessive internal pressure in system
+2023-08-21T12:31:58: ERR: Could not translate line PUMP
+2023-08-21T12:31:58: PROTOCOL,SAMPLE,STOP,2
+2023-08-21T12:31:59: PROTOCOL2023-08-21T12:31:59: PAUSE,2
+2023-08-21T12:32:01: PAUSE2023-08-21T12:32:01: VALVE_SET,0
+2023-08-21T12:32:01: VALVE_SET2023-08-21T12:32:01: Parsing script: f2_rna.txt
+2023-08-21T12:32:01: VALVE_SET,2
+2023-08-21T12:32:01: VALVE_SET2023-08-21T12:32:01: PAUSE,2
+2023-08-21T12:32:01: PAUSE2023-08-21T12:32:01: HOME
+2023-08-21T12:32:01: HOME2023-08-21T12:32:01: VALVE_SET,0
+2023-08-21T12:32:01: VALVE_SET2023-08-21T12:32:01: PAUSE,2
+2023-08-21T12:32:11: PAUSE2023-08-21T12:32:11: #FILTER 2 ADD PRESERVATIVE ###########
+2023-08-21T12:32:11: PROTOCOL,PRESERVE,START,2
+2023-08-21T12:32:11: PROTOCOL2023-08-21T12:32:11: PUMPC,RNA,3000,2,4,25/5/9
+2023-08-21T12:32:11: Pressure Threshold Reached
+2023-08-21T12:32:41: WARN: Stable pressure timeout occurred
+2023-08-21T12:32:41: Reduced pump speed to 16000
+2023-08-21T12:32:41: Pressure Threshold Reached
+2023-08-21T12:33:05: WARN: Stable pressure timeout occurred
+2023-08-21T12:33:05: Reduced pump speed to 12800
+2023-08-21T12:33:05: Pressure Threshold Reached
+2023-08-21T12:33:28: WARN: Stable pressure timeout occurred
+2023-08-21T12:33:28: Reduced pump speed to 10240
+2023-08-21T12:33:28: Pressure Threshold Reached
+2023-08-21T12:33:51: WARN: Stable pressure timeout occurred
+2023-08-21T12:33:51: Reduced pump speed to 8192
+2023-08-21T12:33:51: Pressure Threshold Reached
+2023-08-21T12:34:15: WARN: Stable pressure timeout occurred
+2023-08-21T12:34:15: Reduced pump speed to 6553
+2023-08-21T12:34:15: Pressure Threshold Reached
+2023-08-21T12:34:38: WARN: Stable pressure timeout occurred
+2023-08-21T12:34:38: Reduced pump speed to 5242
+2023-08-21T12:34:38: Pressure Threshold Reached
+2023-08-21T12:35:02: WARN: Stable pressure timeout occurred
+2023-08-21T12:35:02: Reduced pump speed to 4193
+2023-08-21T12:35:02: Pressure Threshold Reached
+2023-08-21T12:35:25: WARN: Stable pressure timeout occurred
+2023-08-21T12:35:25: Reduced pump speed to 3354
+2023-08-21T12:35:25: Pressure Threshold Reached
+2023-08-21T12:35:48: WARN: Stable pressure timeout occurred
+2023-08-21T12:35:48: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:35:48: Pressure Threshold Reached
+2023-08-21T12:36:12: WARN: Stable pressure timeout occurred
+2023-08-21T12:36:12: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:36:12: Pressure Threshold Reached
+2023-08-21T12:36:35: WARN: Stable pressure timeout occurred
+2023-08-21T12:36:35: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:36:35: Pressure Threshold Reached
+2023-08-21T12:36:58: WARN: Stable pressure timeout occurred
+2023-08-21T12:36:58: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:36:58: Pressure Threshold Reached
+2023-08-21T12:37:22: WARN: Stable pressure timeout occurred
+2023-08-21T12:37:22: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:37:22: Pressure Threshold Reached
+2023-08-21T12:37:45: WARN: Stable pressure timeout occurred
+2023-08-21T12:37:45: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:37:45: Pressure Threshold Reached
+2023-08-21T12:38:09: WARN: Stable pressure timeout occurred
+2023-08-21T12:38:09: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:38:09: Pressure Threshold Reached
+2023-08-21T12:38:32: WARN: Stable pressure timeout occurred
+2023-08-21T12:38:32: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:38:32: Pressure Threshold Reached
+2023-08-21T12:38:55: WARN: Stable pressure timeout occurred
+2023-08-21T12:38:55: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:38:55: Pressure Threshold Reached
+2023-08-21T12:39:19: WARN: Stable pressure timeout occurred
+2023-08-21T12:39:19: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:39:19: Pressure Threshold Reached
+2023-08-21T12:39:42: WARN: Stable pressure timeout occurred
+2023-08-21T12:39:42: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:39:42: Pressure Threshold Reached
+2023-08-21T12:40:06: WARN: Stable pressure timeout occurred
+2023-08-21T12:40:06: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:40:06: Pressure Threshold Reached
+2023-08-21T12:40:29: WARN: Stable pressure timeout occurred
+2023-08-21T12:40:29: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:40:29: Pressure Threshold Reached
+2023-08-21T12:40:52: WARN: Stable pressure timeout occurred
+2023-08-21T12:40:52: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:40:52: Pressure Threshold Reached
+2023-08-21T12:41:16: WARN: Stable pressure timeout occurred
+2023-08-21T12:41:16: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:41:16: Pressure Threshold Reached
+2023-08-21T12:41:39: WARN: Stable pressure timeout occurred
+2023-08-21T12:41:39: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:41:39: Pressure Threshold Reached
+2023-08-21T12:42:02: WARN: Stable pressure timeout occurred
+2023-08-21T12:42:02: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:42:02: Pressure Threshold Reached
+2023-08-21T12:42:26: WARN: Stable pressure timeout occurred
+2023-08-21T12:42:26: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:42:26: Pressure Threshold Reached
+2023-08-21T12:42:49: WARN: Stable pressure timeout occurred
+2023-08-21T12:42:49: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:42:49: Pressure Threshold Reached
+2023-08-21T12:43:13: WARN: Stable pressure timeout occurred
+2023-08-21T12:43:13: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:43:13: Pressure Threshold Reached
+2023-08-21T12:43:36: WARN: Stable pressure timeout occurred
+2023-08-21T12:43:36: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:43:36: Pressure Threshold Reached
+2023-08-21T12:43:59: WARN: Stable pressure timeout occurred
+2023-08-21T12:43:59: WARN: Cannot reduce speed pump already running at min speed
+2023-08-21T12:43:59: ERR: Stroke timeout occurred, fluidic blockage
+2023-08-21T12:44:23: WARN: Stable pressure timeout occurred
+2023-08-21T12:44:23: ERR: Could not translate line PUMPC
+2023-08-21T12:44:23: PROTOCOL,PRESERVE,STOP,2
+2023-08-21T12:44:24: PROTOCOL2023-08-21T12:44:24: PAUSE,2
+2023-08-21T12:44:24: PAUSE2023-08-21T12:44:24: VALVE_SET,02023-08-21T12:44:24: VALVE_SET2023-08-21T12:44:24: Parsing script: post_clean.txt
+2023-08-21T12:44:24: #eDNA Sampler Flush Tree, V3, FP-0003-02
+2023-08-21T12:44:24: SPEED,DEFAULT
+2023-08-21T12:44:24: SPEED2023-08-21T12:44:24: VALVE_SET,2 
+2023-08-21T12:44:24: VALVE_SET2023-08-21T12:44:24: PAUSE,2
+2023-08-21T12:44:29: PAUSE2023-08-21T12:44:29: HOME
+2023-08-21T12:44:29: Pressure Threshold Reached
+2023-08-21T12:44:29: Reduced pump speed to 16000
+2023-08-21T12:44:29: Pressure Threshold Reached
+2023-08-21T12:44:29: Reduced pump speed to 12800
+2023-08-21T12:44:42: HOME2023-08-21T12:44:42: VALVE_SET,0
+2023-08-21T12:44:42: VALVE_SET2023-08-21T12:44:42: PAUSE,2
+2023-08-21T12:44:42: PAUSE2023-08-21T12:44:42: PROTOCOL,CLEANSE_CHAN,START,0
+2023-08-21T12:44:44: PROTOCOL2023-08-21T12:44:44: #MILLI-Q FLUSH OF TREE OUT INLET, 9 mL, [21,20], [2]
+2023-08-21T12:44:44: PUMPC,MQ,3000,3,21/20,2
+2023-08-21T12:45:41: PUMPC2023-08-21T12:45:41: #HCL FLUSH OF TREE OUT INLET, 9 mL, [8,20], [2]
+2023-08-21T12:45:41: PUMPC,HCL,3000,3,8/20,2
+2023-08-21T12:46:34: Pressure Threshold Reached
+2023-08-21T12:46:38: Reduced pump speed to 10240
+2023-08-21T12:46:38: PUMPC2023-08-21T12:46:38: #HCL FLUSH OF TREE OUT OUTLET, 1 mL, [8,20], [20,22]
+2023-08-21T12:46:38: PUMPC,HCL,1000,1,8/20,20/22
+2023-08-21T12:46:53: PUMPC2023-08-21T12:46:53: PAUSE,2
+2023-08-21T12:46:53: PAUSE2023-08-21T12:46:53: VALVE_SET,0
+2023-08-21T12:46:53: VALVE_SET2023-08-21T12:46:53: PAUSE,120
+2023-08-21T12:49:15: PAUSE2023-08-21T12:49:15: #MILLI-Q FLUSH OF TREE OUT INLET, 9 mL, [21,20], [2]
+2023-08-21T12:49:15: PUMPC,MQ,3000,3,21/20,2
+2023-08-21T12:50:24: PUMPC2023-08-21T12:50:24: #MILLI-Q FLUSH OF TREE OUT OUTLET, 3 mL, [21,20], [20,22]
+2023-08-21T12:50:24: PUMPC,MQ,3000,1,21/20,20/22
+2023-08-21T12:50:45: PUMPC2023-08-21T12:50:45: PROTOCOL,CLEANSE_CHAN,STOP,0
+2023-08-21T12:50:45: PROTOCOL2023-08-21T12:50:45: PAUSE,2
+2023-08-21T12:50:45: PAUSE2023-08-21T12:50:45: VALVE_SET,02023-08-21T12:50:45: VALVE_SET2023-08-21T12:50:45: RUN,FIN
+2023-08-21T12:51:03: CTRIG,1,7,0,2023-05-31T11:52:32,2023-06-01T11:52:32,2023-06-02T11:52:32,2023-06-03T11:52:32,2023-06-04T11:52:32,2023-06-05T11:52:32,2023-06-06T11:52:32,2023-06-07T11:52:32,2023-06-08T11:52:32
+2023-08-21T12:51:03: ISTAT,EDNA-SA,3.01,3.09,0,IDLE,NA/0/NA
+2023-08-21T12:51:03: CSET,24,20,2,0,20000,0
+2023-08-21T12:51:03: CSTAT,4,5/54000/3,5/3000/10,1/0/0,1/0/0,1/0/0,1/0/0,1/0/0,1/0/0,1/0/0,3886000,350000,188000,993000,188000
+2023-08-21T12:51:17: LS,/logs,ACK	

@@ -1,0 +1,9 @@
+SAMPLE_0=mq_clean.txt,sam_flush.txt,f1_sam.txt,f1_rna.txt,post_clean.txt
+SAMPLE_1=mq_clean.txt,sam_flush.txt,f2_sam.txt,f2_rna.txt,post_clean.txt
+SAMPLE_2=mq_clean.txt,sam_flush.txt,f3_sam.txt,f3_rna.txt,post_clean.txt
+SAMPLE_3=mq_clean.txt,sam_flush.txt,f4_sam.txt,f4_rna.txt,post_clean.txt
+SAMPLE_4=mq_clean.txt,sam_flush.txt,f5_sam.txt,f5_rna.txt,post_clean.txt
+SAMPLE_5=mq_clean.txt,sam_flush.txt,f6_sam.txt,f6_rna.txt,post_clean.txt
+SAMPLE_6=mq_clean.txt,sam_flush.txt,f7_sam.txt,f7_rna.txt,post_clean.txt
+SAMPLE_7=mq_clean.txt,sam_flush.txt,f8_sam.txt,f8_rna.txt,post_clean.txt
+SAMPLE_8=mq_clean.txt,sam_flush.txt,f9_sam.txt,f9_rna.txt,post_clean.txt	
