@@ -6,7 +6,7 @@ library(ggplot2)
 library(ggrepel)
 library(vroom)
 
-specs <- read.csv(file = "data/12S_Taxonomy_Table_FilteredFinal_grouped.csv", header = T)
+specs <- read.csv(file = "data/12S_Taxonomy_Table_FilteredFinal_grouped_nonfish_removed.csv", header = T)
 
 #get unique species
 sort(unique(specs$Sp))
@@ -22,7 +22,7 @@ colnames(commat2)<-specs[,1] #this selects the 3rd column from our taxon table a
 #commat3<-commat2 %>% group_by(colnames())
 
 
-dot.nmds <-metaMDS(commat2, distance="bray", k=12, trymax = 200, maxit=500)
+dot.nmds <-metaMDS(commat2, distance="bray", k=12, trymax = 300, maxit=500)
 plot(dot.nmds) #this is not very informative without labels!
 
 #slightly better plot here
@@ -50,7 +50,7 @@ nmdstheme <- theme_bw()+
         axis.ticks.y=element_blank(),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
-        text=element_text(size=18))
+        text=element_text(size=16))
 
 
 # regular ggplot
@@ -59,7 +59,7 @@ p1 <- ggplot() +
   geom_text(data=species.scores,aes(x=NMDS1,y=NMDS2,label=species),alpha=0.5) +  # add the sp.labels or remove this if too messy
   geom_point(data=data.scores,aes(x=NMDS1,y=NMDS2,colour=group),size=3) +
   #scale_colour_manual()
-  geom_text(data=data.scores,aes(x=NMDS1,y=NMDS2, label=ID), size=6)+
+  geom_text(data=data.scores,aes(x=NMDS1,y=NMDS2, label=ID), size=4)+
   #scale_color_gradient(low="blue", high="black")+
   scale_colour_brewer(palette = "Accent") +
   coord_equal()+
@@ -82,7 +82,7 @@ ggplot()+geom_line(data=ggg, aes(x=gg.sites,y=gg.richness),colour="navyblue", lw
   xlab(label = "# Samples")+
   theme_bw()+
   theme(text=element_text(size=20))
-ggsave(filename = "DOT_specaccum.png", plot = last_plot(), device = "png", path = "figures/", width = 14, height=10, units = "in", dpi=400, bg = "white")
+ggsave(filename = "DOT_specaccum_12S.png", plot = last_plot(), device = "png", path = "figures/", width = 14, height=10, units = "in", dpi=400, bg = "white")
 
 #rarefaction
 dot.rare<-rarecurve(commat2, step=10)
