@@ -6,15 +6,16 @@ library(ggplot2)
 library(ggrepel)
 library(vroom)
 
-specs <- read.csv(file = "data/12S_Taxonomy_Table_FilteredFinal_grouped_nonfish_removed.csv", header = T)
-
+specs <- read.csv(file = "data/12S_Revised_ASVsGrouped.csv", header = T)
+head(specs)
+colnames(specs)<-gsub("X", "DOT", colnames(specs))
 #get unique species
-sort(unique(specs$Sp))
+sort(unique(specs$BLAST))
 #42 species
 
-commat <- specs[,3:48]
-groups<- c(rep("DOT",27), rep("SmithRoot",19))
-weeks<-c(rep(1:9,3), 1,2,4,4,4,5,5,5,6,6,6,7,7,7,8,8,8,9,9)
+commat <- specs[,3:length(colnames(specs))]
+groups<- c(rep("Auto",27), rep("TAS",20))
+#weeks<-c(rep(1:9,3), 1,2,4,4,4,5,5,5,6,6,6,7,7,7,8,8,8,9,9)
 #Transpose the table for vegan
 commat2<-t(commat)
 colnames(commat2)<-specs[,1] #this selects the 3rd column from our taxon table and inserts the species IDs into this matrix
@@ -69,7 +70,7 @@ p1 <- ggplot() +
 p1
 
 
-ggsave(filename = "DOT_NMDS.png", plot = p1, device = "png", path = "figures/", width = 16, height=12, units = "in", dpi=400, bg = "white")
+ggsave(filename = "DOT_NMDS_12SRevised.tif", plot = p1, device = "tif", path = "figures/", width = 16, height=12, units = "in", dpi=400, bg = "white")
 ggsave(filename = "DOT_NMDS_12S_byWeek.png", plot = p1, device = "png", path = "figures/", width = 16, height=12, units = "in", dpi=400, bg = "white")
 
 #Species accumulation curve and other info 
