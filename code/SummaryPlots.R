@@ -81,6 +81,42 @@ dot_df_week_rich_overlap <- rich_df%>% #overlap amongst species detected per wee
                       data.frame()%>%
                       mutate(rep=NA,se=NA,sd=NA)
 
+#summary stats for paper
+mod <- lm(nspecies ~ week*type,data=dot_df_rich_rep%>%filter(marker=="12S")) #'week' as a surrogate of date. No significant trends but can cross refernce if needed. 
+anova(mod)
+
+mod <- lm(nspecies ~ week*type,data=dot_df_rich_rep%>%filter(marker=="CO1"))
+anova(mod)
+
+mod <- aov(nspecies ~ type,data=dot_df_rich_rep%>%filter(marker=="12S"))
+anova(mod)
+
+mod <- aov(nspecies ~ type,data=dot_df_rich_rep%>%filter(marker=="CO1"))
+anova(mod)
+
+#how much species per marker and method
+dot_df_rich_rep%>%
+  group_by(marker,type)%>%
+  summarize(mn=mean(nspecies),
+            sd=sd(nspecies))%>%
+  ungroup()%>%
+  data.frame()
+
+dot_df_rich_rep%>%
+  group_by(marker)%>%
+  summarize(mn=mean(nspecies),
+            sd=sd(nspecies))%>%
+  ungroup()%>%
+  data.frame()
+
+#how much overlap in species composition was there per marker
+dot_df_week_rich_overlap%>%
+  group_by(marker)%>%
+  summarize(mn=mean(overlap),
+            sd=sd(overlap))%>%
+  ungroup()%>%
+  data.frame()
+
 #Assemble plot data
 plotvals <- c("marker","type","week","rep","xval","sd","se")
 
@@ -133,7 +169,7 @@ p1_a <- ggplot()+
               filter(marker=="12S",type=="Total")%>%
               mutate(marker="12S"),aes(x=week,y=xval,group=1),lty=2,col="grey30",lwd=0.6)+
   geom_point(data=plotdata%>%filter(marker=="12S",type=="Total"),
-             aes(x=week,y=xval),shape=21,fill="grey80",size=1.5)+
+             aes(x=week,y=xval),shape=21,fill="grey30",size=1.5)+
   
   facet_grid(marker~.)+
   theme_bw()+
@@ -210,25 +246,127 @@ p1 <- wrap_elements(p1_a/p1_b & ylab(NULL) & theme(plot.margin = margin(5.5, 5.5
 ggsave("figures/marker_method_comparision.png",p1,width=8,height=5,units="in",dpi=300)
 
 
-dot_df_week_rich_total <- dot_df%>%
-  filter(reads>0)%>%
-  group_by(type,week)%>%
-  summarize(nspecies=length(unique(Sp)))%>%
-  ungroup()%>%
-  data.frame()
+#eDNA Concentrations ------
+conc_data <- read.csv("data/eDNA_Concentrations.csv")%>%
+             mutate(type=ifelse(Method == "DOT","Autonomous","FAS"),
+                    concentration=as.numeric(ifelse(Concentration == "<0.05",0.05,Concentration)),
+                    rep=case_when(DOT_unit==1003 ~ 1,
+                                  DOT_unit==1004 ~ 2,
+                                  DOT_unit==1005 ~ 3,
+                                  TRUE ~ NA),
+                    rep=as.character(rep))
 
 
-p2 <- ggplot(data=dot_df_week_rich_total,aes(x=week,y=nspecies))+
-  geom_path(lwd=0.25,aes(group=week),lty=2,show.legend = FALSE)+
-  geom_point(size=2,aes(group=type,fill=type),pch=21,col="black")+
-  geom_text(data=data.frame(week = c(1,9),
-                            nspecies = rep(range(dot_df_week_rich_total$nspecies)[1]-2,2), 
-                            label = c("Aug 11 2023","Oct 16 2023")),aes(label=label))+
+#compare the differnce in eDNA concentration as a function of time
+
+comp_df <- conc_data%>%
+           filter(DurationPreserved %in% intersect(conc_data%>%filter(type=="Autonomous")%>%pull(DurationPreserved)%>%unique(),
+                                                   conc_data%>%filter(type=="FAS")%>%pull(DurationPreserved%>%unique())))%>%
+           rename(duration=DurationPreserved)%>%
+           select(rep,type,duration,concentration)
+
+ggplot(comp_df,aes(x=duration,y=concentration,col=interaction(rep,type),group=interaction(rep,type)))+
+  #facet_wrap(~type,nrow=2)+
+  geom_point()+
+  geom_line()+
   theme_bw()+
-  labs(x="Sample week",y="Species detected",fill="")+
-  theme(legend.position = c(0, 1),  # Position legend in the top left
-        legend.justification = c(0, 1),
-        legend.background = element_blank(),
-        legend.title = element_blank())
+  stat_smooth(aes(group = type,col=type),method="lm")
 
-ggsave("figures/TotalRichness_Comparison.png",p2,width=7.5,height=4.5,units="in",dpi=300)
+#standardsize the data for the preservation comparison
+comp_df_stand <- comp_df%>%
+                 group_by(type,rep)%>%
+                 mutate(stand = concentration/max(concentration))%>%
+                 ungroup()%>%
+                 data.frame()
+
+# Fit the linear model
+model <- lm(stand ~ duration * type, data = data)
+
+# Summarize the model
+summary(model)
+
+# Generate ANOVA table
+anova_table <- anova(model)
+
+#Set up prediction data for the plot
+pred_data <- data %>%
+  group_by(type) %>%
+  reframe(duration = seq(min(duration), max(duration), length.out = 100))
+
+pred_data <- pred_data %>%
+  mutate(pred = predict(model, newdata = pred_data, interval = "confidence"))
+
+pred_data$stand = pred_data[,3]
+
+plotcols <- c("cornflowerblue","tomato3")
+  
+  p1 <- ggplot(data, aes(x = duration, color = type)) +
+    geom_point(aes(y=stand)) +
+    geom_line(data = pred_data, aes(x = duration, y = pred[,1], color = type), size = 1) +
+    geom_ribbon(data = pred_data, aes(x = duration, y = pred[,1], ymin = pred[,2], ymax = pred[,3],fill=type), alpha = 0.2) +
+    geom_smooth(aes(y=stand,group = interaction(type, rep)), method = "lm", se = FALSE, linetype = "dashed", size = 0.5) +
+    theme_bw() +
+    scale_fill_manual(values=plotcols)+
+    scale_colour_manual(values=plotcols)+
+    labs(x="Preservation duration (days)",y="Standardized DNA yeild",col="",fill="")+
+    theme(legend.position = c(0, 0),  # Position legend in the top left
+          legend.justification = c(0, 0),
+          legend.background = element_blank(),
+          legend.title = element_blank(),
+          strip.background = element_rect(fill="white"))
+  
+  ggsave("figures/DNAYield_time.png",p1,height=6,width=8,units="in",dpi=300)
+
+
+  #alternative test - does the differnce between the two methods vary as a function time. 
+  
+comp_df2 <- comp_df%>%
+            spread(type,concentration)%>%
+            mutate(diff=Autonomous - FAS)
+
+model2 <- lm(diff~duration,data=comp_df2)
+anova(model2) #not a significant slope. 
+
+ggplot(data=comp_df2,aes(x=duration,y=diff))+
+         geom_point(aes(col=rep,group=rep))+
+         geom_line(aes(col=rep,group=rep))+
+         geom_hline(yintercept=0,lty=2)+
+         stat_smooth(method="lm")+
+         theme_bw()+
+         theme(legend.position = "none")
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 
+# dot_df_week_rich_total <- dot_df%>%
+#   filter(reads>0)%>%
+#   group_by(type,week)%>%
+#   summarize(nspecies=length(unique(Sp)))%>%
+#   ungroup()%>%
+#   data.frame()
+# 
+# 
+# p2 <- ggplot(data=dot_df_week_rich_total,aes(x=week,y=nspecies))+
+#   geom_path(lwd=0.25,aes(group=week),lty=2,show.legend = FALSE)+
+#   geom_point(size=2,aes(group=type,fill=type),pch=21,col="black")+
+#   geom_text(data=data.frame(week = c(1,9),
+#                             nspecies = rep(range(dot_df_week_rich_total$nspecies)[1]-2,2), 
+#                             label = c("Aug 11 2023","Oct 16 2023")),aes(label=label))+
+#   theme_bw()+
+#   labs(x="Sample week",y="Species detected",fill="")+
+#   theme(legend.position = c(0, 1),  # Position legend in the top left
+#         legend.justification = c(0, 1),
+#         legend.background = element_blank(),
+#         legend.title = element_blank())
+# 
+# ggsave("figures/TotalRichness_Comparison.png",p2,width=7.5,height=4.5,units="in",dpi=300)
