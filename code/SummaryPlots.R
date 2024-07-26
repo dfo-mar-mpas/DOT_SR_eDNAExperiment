@@ -10,23 +10,23 @@ substrRight <- function(x, n){
 }
 
 #load data --- 
-dot_data_raw <- read.csv("data/12S_Taxonomy_Table_FilteredFinal_grouped.csv") #fish
+dot_data_raw <- read.csv("data/12S_Revised_ASVsGrouped.csv") #fish
 dot_data_raw_invert <- read.csv("data/DOTCOI_feature_table_export_filtered.csv")
 
 #format to long 
 dot_df <- dot_data_raw%>%
-          gather(key = "Sampler",val="reads",3:48)%>%
-          mutate(type=ifelse(grepl("DOT",Sampler),"Autonomous","FAS"),
-                 week=substrRight(Sampler,1),
+          gather(key = "Sampler",val="reads",3:49)%>%
+          mutate(type=ifelse(grepl("X10",Sampler),"Autonomous","FAS"),
+                 type=ifelse(grepl("Control",Sampler),"FAS",type),
+                 week=ifelse(grepl("X10",Sampler),substrRight(Sampler,1),substr(Sampler,3,3)),
                  rep=case_when(grepl("1003",Sampler)~1,
                                grepl("1004",Sampler)~2,
                                grepl("1005",Sampler)~3,
-                               grepl("SR1",Sampler)~1,
-                               grepl("SR2",Sampler)~2,
-                               grepl("SR3",Sampler)~3,
+                               grepl("Control",Sampler)~1,
                                TRUE ~ NA),
                  marker="12S")%>% #only a catch if it didn't work: sum(is.na(dot_df$rep)) == 0
-                 rename(confed = Confidence)
+          rename(confed = PercentMatch,
+                 Sp = BLAST)
 
 dot_df_invert <- dot_data_raw_invert%>%
                  gather(key = "Sampler",val="reads",7:53)%>%
