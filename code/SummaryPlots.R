@@ -6,11 +6,21 @@ library(patchwork)
 library(vegan)
 library(ggnewscale)
 library(vegan)
+library(drc)
 
 #functions
 substrRight <- function(x, n){
   substr(x, nchar(x)-n+1, nchar(x))
 }
+
+# Function to estimate number of sites needed to achieve estimated richness
+estimate_sites <- function(fit, richness_estimate) {
+  coef <- coef(fit)
+  asymptote <- coef[1]
+  rate <- coef[2]
+  return((richness_estimate * rate) / (asymptote - richness_estimate))
+}
+
 
 #load data --- 
 dot_data_raw <- read.csv("data/12S_Revised_ASVsGrouped.csv") #fish
@@ -520,4 +530,123 @@ adonis_CO1_euclid <- adonis2(community_matrix_CO1 ~ treatment * week + replicate
 # Display the results
 print(adonis_CO1_bray)
 print(adonis_CO1_euclid)
+
+
+# Species accumulation curves ------
+
+meta_12s <- rownames(community_matrix_12S)%>%
+            data.frame()%>%
+            rename(sample = 1)%>%
+            separate(sample,c("treament","replicate","week"))
+
+meta_CO1 <- rownames(community_matrix_CO1)%>%
+            data.frame()%>%
+            rename(sample = 1)%>%
+            separate(sample,c("treament","replicate","week"))
+
+ 
+SA_df_12S_auto <- community_matrix_12S[meta_12s == "Autonomous",]%>%
+                  select_if(~ sum(.) != 0)
+
+SA_df_12S_FAS <- community_matrix_12S[meta_12s == "FAS",]%>%
+                  select_if(~ sum(.) != 0)
+
+SA_df_CO1_auto <- community_matrix_CO1[meta_CO1 == "Autonomous",]%>%
+                  select_if(~ sum(.) != 0)
+
+SA_df_CO1_FAS <- community_matrix_CO1[meta_CO1 == "FAS",]%>%
+                select_if(~ sum(.) != 0)
+
+#species accumulation curves
+sa_autonomous_12S <- specaccum(SA_df_12S_auto, method = "random")
+sa_fas_12S <- specaccum(SA_df_12S_FAS, method = "random")
+
+sa_autonomous_CO1 <- specaccum(SA_df_CO1_auto, method = "random")
+sa_fas_CO1 <- specaccum(SA_df_CO1_FAS, method = "random")
+
+#estimate richness
+richness_est_12S <- specpool(SA_df_12S_auto)%>%
+                       data.frame()%>%
+                       mutate(method="Autonomous")%>%
+                       rbind(.,specpool(SA_df_12S_FAS)%>%
+                               data.frame()%>%
+                               mutate(method="FAS"))%>%
+                       mutate(marker="12S")
+
+richness_est_CO1 <- specpool(SA_df_CO1_auto)%>%
+                  data.frame()%>%
+                  mutate(method="Autonomous")%>%
+                  rbind(.,specpool(SA_df_CO1_FAS)%>%
+                          data.frame()%>%
+                          mutate(method="FAS"))%>%
+                  mutate(marker="CO1")
+
+
+## Fit Michaelis-Menten model to the accumulation curves
+fit_autonomous_12S <- drm(sa_autonomous_12S$richness ~ sa_autonomous_12S$sites, fct = MM.2())
+fit_fas_12S <- drm(sa_fas_12S$richness ~ sa_fas_12S$sites, fct = MM.2())
+
+fit_autonomous_CO1 <- drm(sa_autonomous_CO1$richness ~ sa_autonomous_CO1$sites, fct = MM.2())
+fit_fas_CO1 <- drm(sa_fas_CO1$richness ~ sa_fas_CO1$sites, fct = MM.2())
+
+#dataframe for the estimated assymptotic diversity
+sites_needed_autonomous_12S <- estimate_sites(fit_autonomous_12S, richness_est_12S%>%filter(method=="Autonomous")%>%pull(chao))
+sites_needed_fas_12S <- estimate_sites(fit_fas_12S, richness_est_12S%>%filter(method=="FAS")%>%pull(chao))
+
+sites_needed_autonomous_CO1 <- estimate_sites(fit_autonomous_CO1, richness_est_CO1%>%filter(method=="Autonomous")%>%pull(chao))
+sites_needed_fas_CO1 <- estimate_sites(fit_fas_CO1, richness_est_CO1%>%filter(method=="FAS")%>%pull(chao))
+
+#add to the richness dfs
+richness_est_12S$sites <- c(sites_needed_autonomous_12S,sites_needed_fas_12S)
+richness_est_12S$msite <- sa_12S_df%>%group_by(method)%>%summarize(max=max(Sites))%>%ungroup()%>%pull(max)
+richness_est_CO1$sites <- c(sites_needed_autonomous_CO1,sites_needed_fas_CO1)
+richness_est_CO1$msite <- sa_CO1_df%>%group_by(method)%>%summarize(max=max(Sites))%>%ungroup()%>%pull(max)
+
+# Convert to data frames for ggplot2
+sa_12S_df <- data.frame(Sites = sa_autonomous_12S$sites, 
+                            Richness = sa_autonomous_12S$richness, 
+                            SD = sa_autonomous_12S$sd)%>%
+                    mutate(method="Autonomous")%>%
+  rbind(., data.frame(Sites = sa_fas_12S$sites, 
+                     Richness = sa_fas_12S$richness, 
+                     SD = sa_fas_12S$sd)%>%
+             mutate(method="FAS"))%>%
+  mutate(marker="12S")
+
+sa_CO1_df <- data.frame(Sites = sa_autonomous_CO1$sites, 
+                        Richness = sa_autonomous_CO1$richness, 
+                        SD = sa_autonomous_CO1$sd)%>%
+  mutate(method="Autonomous")%>%
+  rbind(., data.frame(Sites = sa_fas_CO1$sites, 
+                      Richness = sa_fas_CO1$richness, 
+                      SD = sa_fas_CO1$sd)%>%
+          mutate(method="FAS"))%>%
+  mutate(marker="CO1")
+
+plot_df <- rbind(sa_12S_df,sa_CO1_df)
+plot_df_rich <- rbind(richness_est_12S,richness_est_CO1)
+
+
+sa_plot <- ggplot(data=plot_df,aes(group=method,fill=method)) +
+          geom_line(data=plot_df,aes(color=method,x = Sites, y = Richness),lwd=1.5) +
+          geom_ribbon(data=plot_df,aes(color=method,x = Sites, ymin = Richness - SD, ymax = Richness + SD), alpha = 0.2)+
+          geom_errorbar(data=plot_df_rich,aes(x=rep(c(28,29),2),ymin = chao-chao.se,ymax=chao+chao.se),size=0.5)+
+          geom_point(data=plot_df_rich,aes(x=rep(c(28,29),2),y = chao),pch=21,size=2)+
+          theme_bw()+
+          facet_wrap(~marker,ncol=2)+
+          labs(x = "Number of Samples", y = "Species Richness",fill="",color="")+
+          theme(strip.background = element_rect(fill="white"),
+                legend.position="inside",
+                legend.position.inside = c(0.085,0.93),
+                legend.title=element_blank(),
+                legend.background = element_blank())
+
+ggsave("figures/species_accum_plots.png",sa_plot,width=8,height=5,units="in",dpi=300)               
+    
+
++
+  labs(title = "Species Accumulation Curves", x = "Number of Samples", y = "Species Richness") +
+  theme_minimal() +
+  scale_color_manual(values = c("Autonomous" = "blue", "FAS" = "red")) +
+  guides(fill = guide_legend(title = "Sampling Method"))
 
