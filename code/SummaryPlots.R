@@ -13,6 +13,10 @@ substrRight <- function(x, n){
   substr(x, nchar(x)-n+1, nchar(x))
 }
 
+
+#Plot colours 
+plotcols <- c("cornflowerblue","tomato3")
+
 # Function to estimate number of sites needed to achieve estimated richness
 estimate_sites <- function(fit, richness_estimate) {
   coef <- coef(fit)
@@ -183,7 +187,8 @@ p1_a <- ggplot()+
               mutate(marker="12S"),aes(x=week,y=xval,group=1),lty=2,col="grey30",lwd=0.6)+
   geom_point(data=plotdata%>%filter(marker=="12S",type=="Total"),
              aes(x=week,y=xval),shape=21,fill="grey30",size=1.5)+
-  
+  scale_color_manual(values = plotcols)+
+  scale_fill_manual(values= plotcols)+
   facet_grid(marker~.)+
   theme_bw()+
   labs(x="Sample week",y="Species detected",fill="")+
@@ -236,6 +241,8 @@ p1_b <- ggplot()+
   
   #facet label
   facet_grid(marker~.)+
+  scale_color_manual(values = plotcols)+
+  scale_fill_manual(values= plotcols)+
   
   #time of week labels
   geom_text(data=data.frame(week = c(1,9),
@@ -311,8 +318,6 @@ pred_data <- pred_data %>%
   mutate(pred = predict(model, newdata = pred_data, interval = "confidence"))
 
 pred_data$stand = pred_data[,3]
-
-plotcols <- c("cornflowerblue","tomato3")
   
   p1 <- ggplot(data=comp_df_stand , aes(x = duration, color = type)) +
     geom_point(data=comp_df_stand ,aes(y=stand)) +
@@ -471,6 +476,8 @@ nmds_plot <- ggplot(data=hull_data)+
               geom_point(aes(x=NMDS1,y=NMDS2,fill=type,size=log10(weekn+1)),col="black",shape=21,show.legend = FALSE)+
               scale_size_continuous(range = c(2, 7),breaks=log10(c(1,2,5,9)+1),labels=c(1,2,5,9))+
               theme_bw()+
+              scale_color_manual(values = plotcols)+
+              scale_fill_manual(values= plotcols)+
               facet_grid(method~marker,scales="free")+
               theme(strip.background = element_rect(fill="white"),
                     legend.position="inside",
@@ -668,7 +675,9 @@ chao_12S <- ggplot(data=plot_df_rich%>%filter(marker=="12S")%>%mutate(x=c(1,2)))
                   panel.grid.major = element_blank(), 
                   panel.grid.minor = element_blank(),
                   plot.margin = margin(0, 0, 0, 0),
-                  axis.ticks.y=element_blank())
+                  axis.ticks.y=element_blank())+
+              scale_color_manual(values = plotcols)+
+              scale_fill_manual(values= plotcols)
 
 chao_CO1 <- ggplot(data=plot_df_rich%>%filter(marker=="CO1")%>%mutate(x=c(1,2)))+
             geom_errorbar(aes(x=x,ymin = chao-chao.se,ymax=chao+chao.se),size=0.5)+
@@ -683,7 +692,9 @@ chao_CO1 <- ggplot(data=plot_df_rich%>%filter(marker=="CO1")%>%mutate(x=c(1,2)))
                   panel.grid.major = element_blank(), 
                   panel.grid.minor = element_blank(),
                   plot.margin = margin(0, 0, 0, 0),
-                  axis.ticks.y=element_blank())
+                  axis.ticks.y=element_blank())+
+              scale_color_manual(values = plotcols)+
+              scale_fill_manual(values= plotcols)
 
 sa_plot_12s <- ggplot(data=plot_df%>%filter(marker=="12S"),aes(group=method,fill=method)) +
               geom_line(data=plot_df%>%filter(marker=="12S"),aes(color=method,x = Sites, y = Richness),lwd=1.5) +
@@ -697,7 +708,9 @@ sa_plot_12s <- ggplot(data=plot_df%>%filter(marker=="12S"),aes(group=method,fill
                     legend.position.inside = c(0.2,0.89),
                     legend.title=element_blank(),
                     legend.background = element_blank(),
-                    plot.margin = margin(0, 0, 0, 0))
+                    plot.margin = margin(0, 0, 0, 0))+
+              scale_color_manual(values = plotcols)+
+              scale_fill_manual(values= plotcols)
 
 sa_plot_CO1 <- ggplot(data=plot_df%>%filter(marker=="CO1"),aes(group=method,fill=method)) +
               geom_line(data=plot_df%>%filter(marker=="CO1"),aes(color=method,x = Sites, y = Richness),lwd=1.5) +
@@ -711,7 +724,9 @@ sa_plot_CO1 <- ggplot(data=plot_df%>%filter(marker=="CO1"),aes(group=method,fill
                     axis.text.y = element_blank(),
                     axis.title.y = element_blank(),
                     plot.margin = margin(0, 0, 0, 0),
-                    axis.ticks.y=element_blank())
+                    axis.ticks.y=element_blank())+
+              scale_color_manual(values = plotcols)+
+              scale_fill_manual(values= plotcols)
 
 
 mos_plot <- sa_plot_12s + chao_12S + sa_plot_CO1 + chao_CO1 + plot_layout(ncol = 4, widths = c(5, 1, 5, 1))
