@@ -319,11 +319,11 @@ pred_data <- pred_data %>%
 
 pred_data$stand = pred_data[,3]
   
-  p1 <- ggplot(data=comp_df_stand , aes(x = duration, color = type)) +
-    geom_point(data=comp_df_stand ,aes(y=stand)) +
+  p1 <- ggplot(data=comp_df_stand , aes(x = duration)) +
+    geom_point(data=comp_df_stand ,aes(y=stand,fill=type),size=2.6,shape=21) +
     geom_line(data = pred_data, aes(x = duration, y = pred[,1], color = type), size = 1) +
-    geom_ribbon(data = pred_data, aes(x = duration, y = pred[,1], ymin = pred[,2], ymax = pred[,3],fill=type), alpha = 0.2) +
-    geom_smooth(aes(y=stand,group = interaction(type, rep)), method = "lm", se = FALSE, linetype = "dashed", size = 0.5) +
+    geom_ribbon(data = pred_data, aes(x = duration, y = pred[,1], ymin = pred[,2], ymax = pred[,3],fill=type, color = type), alpha = 0.2) +
+    geom_smooth(aes(y=stand,group = interaction(type, rep), color = type), method = "lm", se = FALSE, linetype = "dashed", size = 0.5) +
     theme_bw() +
     scale_fill_manual(values=plotcols)+
     scale_colour_manual(values=plotcols)+
@@ -335,7 +335,7 @@ pred_data$stand = pred_data[,3]
           strip.background = element_rect(fill="white"))
   
   ggsave("figures/DNAYield_time.png",p1,height=6,width=8,units="in",dpi=300)
-  ggsave("figures/Final Figures/Figure2.tif",p1,height=6,width=8,units="in",dpi=300)
+  ggsave("figures/Final Figures/Figure2.tif",p1,height=5,width=8,units="in",dpi=300)
 
 
   #alternative test - does the differnce between the two methods vary as a function time. 
@@ -664,7 +664,7 @@ facet_labels <- c(
 
 chao_12S <- ggplot(data=plot_df_rich%>%filter(marker=="12S")%>%mutate(x=c(1,2)))+
              geom_errorbar(aes(x=x,ymin = chao-chao.se,ymax=chao+chao.se),size=0.5)+
-             geom_point(aes(x=x,y = chao,fill=method),pch=21,size=2,show.legend = FALSE)+
+             geom_point(aes(x=x,y = chao,fill=method),pch=21,size=3,show.legend = FALSE)+
              scale_y_continuous(limits=c(0,60))+
              facet_wrap(~marker,labeller = as_labeller(facet_labels, default = label_parsed))+
              theme_bw()+
@@ -681,7 +681,7 @@ chao_12S <- ggplot(data=plot_df_rich%>%filter(marker=="12S")%>%mutate(x=c(1,2)))
 
 chao_CO1 <- ggplot(data=plot_df_rich%>%filter(marker=="CO1")%>%mutate(x=c(1,2)))+
             geom_errorbar(aes(x=x,ymin = chao-chao.se,ymax=chao+chao.se),size=0.5)+
-            geom_point(aes(x=x,y = chao,fill=method),pch=21,size=2,show.legend = FALSE)+
+            geom_point(aes(x=x,y = chao,fill=method),pch=21,size=3,show.legend = FALSE)+
             scale_y_continuous(limits=c(0,60))+
             facet_wrap(~marker,labeller = as_labeller(facet_labels, default = label_parsed))+
             theme_bw()+
