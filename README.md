@@ -8,6 +8,10 @@ Sample processing and sequence data is provided through a partnership with the H
 
 Deployment Mosaic for the autonomous eDNA samplers in the Bedford Basin.
 
+***
+
+# Figures from manuscript
+
 ![](figures/Final Figures/Figure1.tif)
 
 __Fig 1.__ Mosaic of intake filter throughout the 9 week evaluation period. 
