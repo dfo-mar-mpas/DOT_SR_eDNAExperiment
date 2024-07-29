@@ -12,22 +12,22 @@ Deployment Mosaic for the autonomous eDNA samplers in the Bedford Basin.
 
 # Figures from manuscript
 
-![](figures/Final Figures/Figure1.tif)
+![](figures/DOT_Biofouling_Mosaic-01.png)
 
 __Fig 1.__ Mosaic of intake filter throughout the 9 week evaluation period. 
 
-![](figures/Final Figures/Figure2.tif)
+![](figures/DNAYield_time.png)
 
 __Fig 2.__ Trends in DNA extraction yield over time, comparing samples preserved in RNAlater by the autonomous samplers and those preserved at -80 after filtering at the time of sample (FAS).
 
-![](figures/Final Figures/Figure3.tif)
+![](figures/marker_method_comparision.png)
 
 __Fig 3.__ Comparison of species richness by sampling method and sample time. Dashed lines represent the average number of shared species and the total number of species detected among sampling methods at each time point. Error bars indicate standard error.
 
-![](figures/Final Figures/Figure4.tif)
+![](figures/richness_estimate_mosaic.png)
 
 __Fig 4.__ Comparison of species richness trajectories by sampling method and eDNA marker. Ribbon plots represent species accumulation curves, while points indicate the Chao extrapolated richness in the sampled species pool (± s.e.) for each sampling method over the sampling period. 
 
-![](figures/Final Figures/Figure5.tif)
+![](figures/nmds_plot_all.png)
 
 __Fig 5.__ Plot comparing compositional changes in species richness as a function of sampling period, amplification primer, and community dissimilarity metric using non-metric multidimensional scaling. Size of points corresponds to the sampling period scaling from smallest (week 1) to largest (week 9).
