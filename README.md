@@ -1,12 +1,14 @@
 # Evaluating an Autonomous eDNA Sampler for Marine Environmental Monitoring: Short- and Long-Term Applications
 
+[![DOI](https://zenodo.org/badge/777918323.svg)](https://zenodo.org/doi/10.5281/zenodo.13126692)
+
 Code and data for an environmental DNA (eDNA) experiment conducted in summer 2023 comparing [DOT autonomous eDNA samplers](https://dartmouthocean.com/products/edna-sampler) with a standardized protocol using Smith-Root benchtop filtering setup. 
 
 Sample processing and sequence data is provided through a partnership with the Hakai Institute, British Columbia. 
 
 ![](figures/DeploymentMosaic-01.png)
 
-Deployment Mosaic for the autonomous eDNA samplers in the Bedford Basin.
+__Deployment Mosaic for the autonomous eDNA samplers in the Bedford Basin.__
 
 ***
 
