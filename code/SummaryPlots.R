@@ -630,6 +630,8 @@ plot_df_rich <- rbind(richness_est_12S,richness_est_CO1)
 sa_plot <- ggplot(data=plot_df,aes(group=method,fill=method)) +
           geom_line(data=plot_df,aes(color=method,x = Sites, y = Richness),lwd=1.5) +
           geom_ribbon(data=plot_df,aes(color=method,x = Sites, ymin = Richness - SD, ymax = Richness + SD), alpha = 0.2)+
+          geom_rect(aes(xmin = 27, xmax = Inf, ymin = -Inf, ymax = Inf), alpha = 0.5, fill = "grey95") +
+          geom_vline(xintercept = 27, linetype = "dashed") +        
           geom_errorbar(data=plot_df_rich,aes(x=rep(c(28,29),2),ymin = chao-chao.se,ymax=chao+chao.se),size=0.5)+
           geom_point(data=plot_df_rich,aes(x=rep(c(28,29),2),y = chao),pch=21,size=2)+
           theme_bw()+
@@ -639,14 +641,77 @@ sa_plot <- ggplot(data=plot_df,aes(group=method,fill=method)) +
                 legend.position="inside",
                 legend.position.inside = c(0.085,0.93),
                 legend.title=element_blank(),
-                legend.background = element_blank())
+                legend.background = element_blank())+
+          scale_x_continuous(limits=c(0,29.5),breaks=c(0,9,18,27))
 
-ggsave("figures/species_accum_plots.png",sa_plot,width=8,height=5,units="in",dpi=300)               
-    
+ggsave("figures/species_accum_plots.png",sa_plot,width=8,height=5,units="in",dpi=300)     
 
-+
-  labs(title = "Species Accumulation Curves", x = "Number of Samples", y = "Species Richness") +
-  theme_minimal() +
-  scale_color_manual(values = c("Autonomous" = "blue", "FAS" = "red")) +
-  guides(fill = guide_legend(title = "Sampling Method"))
+#more complicated patchwork way 
 
+facet_labels <- c(
+  "12S" = "Chao[12*S]",
+  "CO1" = "Chao[CO1]"
+)
+
+chao_12S <- ggplot(data=plot_df_rich%>%filter(marker=="12S")%>%mutate(x=c(1,2)))+
+             geom_errorbar(aes(x=x,ymin = chao-chao.se,ymax=chao+chao.se),size=0.5)+
+             geom_point(aes(x=x,y = chao,fill=method),pch=21,size=2,show.legend = FALSE)+
+             scale_y_continuous(limits=c(0,60))+
+             facet_wrap(~marker,labeller = as_labeller(facet_labels, default = label_parsed))+
+             theme_bw()+
+             theme(axis.text = element_blank(),
+                  strip.background = element_rect(fill="white"),
+                  axis.title = element_blank(),
+                  axis.ticks.x =element_blank(),
+                  panel.grid.major = element_blank(), 
+                  panel.grid.minor = element_blank(),
+                  plot.margin = margin(0, 0, 0, 0),
+                  axis.ticks.y=element_blank())
+
+chao_CO1 <- ggplot(data=plot_df_rich%>%filter(marker=="CO1")%>%mutate(x=c(1,2)))+
+            geom_errorbar(aes(x=x,ymin = chao-chao.se,ymax=chao+chao.se),size=0.5)+
+            geom_point(aes(x=x,y = chao,fill=method),pch=21,size=2,show.legend = FALSE)+
+            scale_y_continuous(limits=c(0,60))+
+            facet_wrap(~marker,labeller = as_labeller(facet_labels, default = label_parsed))+
+            theme_bw()+
+            theme(axis.text = element_blank(),
+                  strip.background = element_rect(fill="white"),
+                  axis.title = element_blank(),
+                  axis.ticks.x =element_blank(),
+                  panel.grid.major = element_blank(), 
+                  panel.grid.minor = element_blank(),
+                  plot.margin = margin(0, 0, 0, 0),
+                  axis.ticks.y=element_blank())
+
+sa_plot_12s <- ggplot(data=plot_df%>%filter(marker=="12S"),aes(group=method,fill=method)) +
+              geom_line(data=plot_df%>%filter(marker=="12S"),aes(color=method,x = Sites, y = Richness),lwd=1.5) +
+              geom_ribbon(data=plot_df%>%filter(marker=="12S"),aes(color=method,x = Sites, ymin = Richness - SD, ymax = Richness + SD), alpha = 0.2)+
+              scale_y_continuous(limits=c(0,60))+
+              theme_bw()+
+              facet_wrap(~marker,ncol=2)+
+              labs(x = "Number of Samples", y = "Species Richness",fill="",color="")+
+              theme(strip.background = element_rect(fill="white"),
+                    legend.position="inside",
+                    legend.position.inside = c(0.2,0.89),
+                    legend.title=element_blank(),
+                    legend.background = element_blank(),
+                    plot.margin = margin(0, 0, 0, 0))
+
+sa_plot_CO1 <- ggplot(data=plot_df%>%filter(marker=="CO1"),aes(group=method,fill=method)) +
+              geom_line(data=plot_df%>%filter(marker=="CO1"),aes(color=method,x = Sites, y = Richness),lwd=1.5) +
+              geom_ribbon(data=plot_df%>%filter(marker=="CO1"),aes(color=method,x = Sites, ymin = Richness - SD, ymax = Richness + SD), alpha = 0.2)+
+              scale_y_continuous(limits=c(0,60))+
+              theme_bw()+
+              facet_wrap(~marker,ncol=2)+
+              labs(x = "Number of Samples", y = "Species Richness",fill="",color="")+
+              theme(strip.background = element_rect(fill="white"),
+                    legend.position="none",
+                    axis.text.y = element_blank(),
+                    axis.title.y = element_blank(),
+                    plot.margin = margin(0, 0, 0, 0),
+                    axis.ticks.y=element_blank())
+
+
+mos_plot <- sa_plot_12s + chao_12S + sa_plot_CO1 + chao_CO1 + plot_layout(ncol = 4, widths = c(5, 1, 5, 1))
+            
+ggsave("figures/richness_estimate_mosaic.png",mos_plot,width=8,height=4,units="in",dpi=300)
