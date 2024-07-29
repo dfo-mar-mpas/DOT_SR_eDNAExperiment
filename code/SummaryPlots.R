@@ -3,6 +3,9 @@
 #load libraries ---
 library(tidyverse)
 library(patchwork)
+library(vegan)
+library(ggnewscale)
+library(vegan)
 
 #functions
 substrRight <- function(x, n){
@@ -257,7 +260,7 @@ conc_data <- read.csv("data/eDNA_Concentrations.csv")%>%
                     rep=as.character(rep))
 
 
-#compare the differnce in eDNA concentration as a function of time
+#compare the difference in eDNA concentration as a function of time
 
 comp_df <- conc_data%>%
            filter(DurationPreserved %in% intersect(conc_data%>%filter(type=="Autonomous")%>%pull(DurationPreserved)%>%unique(),
@@ -336,37 +339,185 @@ ggplot(data=comp_df2,aes(x=duration,y=diff))+
          theme(legend.position = "none")
 
 
+### NMDS plots ------------------
+
+#data setup
+
+#12S marker
+community_matrix_12S <- dot_data_raw%>%
+                        select(-2)%>%
+                        gather("sample","reads",2:48)%>%
+                        pivot_wider(names_from = BLAST,values_from = reads)%>%
+                        mutate(sample2 = sample,
+                               sample = gsub("X","Autonomous_",sample))%>%
+                        as_tibble()%>%
+                        separate(sample2,c("week","name"))%>%
+                        mutate(sample3 = gsub("Parallel","",name),
+                               sample4 = case_when(grepl("Parallel",sample) ~ paste0("FAS_",sample3,"_",week),
+                                                   grepl("Control",sample) ~ paste0("FAS_",1001,"_",week),
+                                                   TRUE~sample))%>%
+                        select(-c(sample3,sample,week,name))%>%
+                        rename(sample=sample4)%>%
+                        column_to_rownames(var="sample")%>%
+                        mutate(tot = rowSums(.,na.rm=T))%>%
+                        filter(tot>0)%>% #filter out any zero catches
+                        select(-tot)%>%
+                        decostand(method = "total")
+
+groups_12S <- c(rep("Autonomous",sum(grepl("Autonomous",rownames(community_matrix_12S)))),
+                rep("FAS",sum(!grepl("Autonomous",rownames(community_matrix_12S)))))
 
 
+#COI Marker
+community_matrix_CO1 <- dot_data_raw_invert%>%
+                        select(-c(1:4,6))%>%
+                        mutate(Species = gsub("_"," ",Species))%>%
+                        gather("sample","reads",2:48)%>%
+                        pivot_wider(names_from = Species,values_from = reads)%>%
+                        mutate(sample_org = sample,
+                               sample = gsub("DOT","Autonomous_",sample))%>%
+                        as_tibble()%>%
+                        separate(sample_org,c("type","week"))%>%
+                        mutate(sample=case_when(grepl("SR1",type) ~ paste0("FAS_",1001,"_","Wk",week),
+                                                grepl("SR3",type) ~ paste0("FAS_",1003,"_","Wk",week),
+                                                grepl("SR4",type) ~ paste0("FAS_",1004,"_","Wk",week),
+                                                grepl("SR5",type) ~ paste0("FAS_",1005,"_","Wk",week),
+                                                TRUE ~ sample))%>%
+                        select(-c(type,week))%>%
+                        column_to_rownames(var="sample")%>%
+                        mutate(tot = rowSums(.,na.rm=T))%>%
+                        filter(tot>0)%>% #filter out any zero catches
+                        select(-tot)%>%
+                        decostand(method = "total")
+
+groups_CO1 <- c(rep("Autonomous",sum(grepl("Autonomous",rownames(community_matrix_CO1)))),
+                rep("FAS",sum(!grepl("Autonomous",rownames(community_matrix_CO1)))))
+
+#Run the metaMDS analyses based on Bray Curtis and Euclidean distance
+
+Bray_12s <-metaMDS(community_matrix_12S, distance="bray", k=12, trymax = 300, maxit=500)
+Euclid_12s <- metaMDS(community_matrix_12S%>%dist(., method="binary"),distance="binary",k=12, trymax = 300, maxit=500)
+
+Bray_CO1 <-metaMDS(community_matrix_CO1, distance="bray", k=12, trymax = 300, maxit=500)
+Euclid_CO1 <- metaMDS(community_matrix_CO1%>%dist(., method="binary"),distance="binary",k=12, trymax = 300, maxit=500)
+
+#data processing -------------
+data.scores <- as.data.frame(scores(Bray_12s,"sites"))%>%
+              mutate(id=rownames(.),
+                     method="Bray-Curtis",
+                     stress=round(Bray_12s$stress,3))%>%
+              separate(id,c("type","rep","week"),sep="_")%>%
+              rbind(.,
+                    as.data.frame(scores(Euclid_12s,"sites"))%>%
+                      mutate(id=rownames(.),
+                             method="Euclidean distance",
+                             stress=round(Euclid_12s$stress,3))%>%
+                      separate(id,c("type","rep","week"),sep="_"))%>%
+              select(NMDS1,NMDS2,method,type,rep,week,stress)%>%
+              mutate(marker="12S")%>%
+              rbind(.,as.data.frame(scores(Bray_CO1,"sites"))%>%
+                      mutate(id=rownames(.),
+                             method="Bray-Curtis",
+                             stress=round(Bray_CO1$stress,3))%>%
+                      separate(id,c("type","rep","week"),sep="_")%>%
+                      rbind(.,
+                              as.data.frame(scores(Euclid_CO1,"sites"))%>%
+                              mutate(id=rownames(.),
+                                     method="Euclidean distance",
+                                     stress=round(Euclid_CO1$stress,3))%>%
+                              separate(id,c("type","rep","week"),sep="_"))%>%
+                              select(NMDS1,NMDS2,method,type,rep,week,stress)%>%
+                              mutate(marker="CO1"))
+                               
+species.scores <- as.data.frame(scores(Bray_12s,"species"))%>%
+                  mutate(method = "Bray-Curtis")%>%
+                  rbind(.,as.data.frame(scores(Euclid_12s,"species"))%>%
+                          mutate(method="Euclidean distance"))%>%
+                  mutate(marker="12S")%>%rbind(.,
+                                               as.data.frame(scores(Bray_CO1,"species"))%>%
+                                                 mutate(method = "Bray-Curtis")%>%
+                                                 rbind(.,as.data.frame(scores(Euclid_CO1,"species"))%>%
+                                                         mutate(method="Euclidean distance"))%>%
+                                                 mutate(marker="CO1"))%>%
+                  rownames_to_column(var="species")%>%
+                  select(species,NMDS1,NMDS2,marker)
+                                                  
+
+hull_data <- data.scores%>%
+            group_by(marker,method,type)%>%
+            slice(chull(x=NMDS1,y=NMDS2))%>%
+            mutate(weekn = as.numeric(gsub("Wk","",week)))
 
 
+## make plots
+
+nmds_plot <- ggplot(data=hull_data)+
+              #geom_text(data=species.scores,aes(x=NMDS1,y=NMDS2,label=species),size=2,col="grey70")+
+              geom_polygon(aes(x=NMDS1,y=NMDS2,fill=type),alpha=0.30)+
+              labs(fill="")+
+              geom_point(aes(x=NMDS1,y=NMDS2,fill=type),col="black",shape=21,size=1)+
+              geom_point(aes(x=NMDS1,y=NMDS2,fill=type,size=log10(weekn+1)),col="black",shape=21,show.legend = FALSE)+
+              scale_size_continuous(range = c(2, 7),breaks=log10(c(1,2,5,9)+1),labels=c(1,2,5,9))+
+              theme_bw()+
+              facet_grid(method~marker,scales="free")+
+              theme(strip.background = element_rect(fill="white"),
+                    legend.position="inside",
+                    legend.position.inside = c(0.085,0.96),
+                    legend.background = element_blank())
+              
+                            
+                                
+ggsave("figures/nmds_plot_all.png",nmds_plot,height=6,width=8,units="in",dpi=300)
 
 
+# peform a multivariate analysis of variance. 
+
+## 12s
+# Extract sample identifiers
+samples <- rownames(community_matrix_12S)
+
+# Extract treatments and weeks from sample identifiers
+treatment <- ifelse(grepl("Autonomous", samples), "Autonomous", "FAS")
+week <- as.numeric(sub(".*Wk([0-9]+).*", "\\1", samples))
+replicate_unit <- samples%>%
+                  data.frame()%>%
+                  rename(sample = 1)%>%
+                  separate(sample,c("treament","replicate","week"))%>%
+                  pull(replicate)
+
+# Create an environmental data frame
+env_data <- data.frame(treatment = treatment, week = week,replicate_unit = replicate_unit)
+
+# Conduct PERMANOVA
+adonis_12s_bray <- adonis2(community_matrix_12S ~ treatment * week + replicate_unit, data = env_data, method = "bray")
+adonis_12s_euclid <- adonis2(community_matrix_12S ~ treatment * week, data = env_data, method = "euclidean")
+
+# Display the results
+print(adonis_12s_bray)
+print(adonis_12s_euclid)
+
+## COI
+# Extract sample identifiers
+samples_CO1 <- rownames(community_matrix_CO1)
+
+# Extract treatments and weeks from sample identifiers
+treatment_CO1 <- ifelse(grepl("Autonomous", samples_CO1), "Autonomous", "FAS")
+week_CO1 <- as.numeric(sub(".*Wk([0-9]+).*", "\\1", samples_CO1))
+replicate_unit_CO1 <- samples_CO1%>%
+                  data.frame()%>%
+                  rename(sample = 1)%>%
+                  separate(sample,c("treament","replicate","week"))%>%
+                  pull(replicate)
 
 
+# Create an environmental data frame
+env_data_CO1 <- data.frame(treatment = treatment_CO1, week = week_CO1,replicate_unit = replicate_unit_CO1)
 
+# Conduct PERMANOVA
+adonis_CO1_bray <- adonis2(community_matrix_CO1 ~ treatment * week + replicate_unit, data = env_data, method = "bray")
+adonis_CO1_euclid <- adonis2(community_matrix_CO1 ~ treatment * week + replicate_unit, data = env_data, method = "euclidean")
 
+# Display the results
+print(adonis_CO1_bray)
+print(adonis_CO1_euclid)
 
-# 
-# dot_df_week_rich_total <- dot_df%>%
-#   filter(reads>0)%>%
-#   group_by(type,week)%>%
-#   summarize(nspecies=length(unique(Sp)))%>%
-#   ungroup()%>%
-#   data.frame()
-# 
-# 
-# p2 <- ggplot(data=dot_df_week_rich_total,aes(x=week,y=nspecies))+
-#   geom_path(lwd=0.25,aes(group=week),lty=2,show.legend = FALSE)+
-#   geom_point(size=2,aes(group=type,fill=type),pch=21,col="black")+
-#   geom_text(data=data.frame(week = c(1,9),
-#                             nspecies = rep(range(dot_df_week_rich_total$nspecies)[1]-2,2), 
-#                             label = c("Aug 11 2023","Oct 16 2023")),aes(label=label))+
-#   theme_bw()+
-#   labs(x="Sample week",y="Species detected",fill="")+
-#   theme(legend.position = c(0, 1),  # Position legend in the top left
-#         legend.justification = c(0, 1),
-#         legend.background = element_blank(),
-#         legend.title = element_blank())
-# 
-# ggsave("figures/TotalRichness_Comparison.png",p2,width=7.5,height=4.5,units="in",dpi=300)
