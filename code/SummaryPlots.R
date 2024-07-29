@@ -249,14 +249,15 @@ p1_b <- ggplot()+
 
 
 #patchwork combination plot ----
-p1 <- wrap_elements(p1_a/p1_b & ylab(NULL) & theme(plot.margin = margin(5.5, 5.5, 5.5, 0))) + 
+p1_mosaic <- wrap_elements(p1_a/p1_b & ylab(NULL) & theme(plot.margin = margin(5.5, 5.5, 5.5, 0))) + 
   labs(tag = "Species detected") + # https://tidytales.ca/snippets/2022-12-22_patchwork-shared-axis-labels/
   theme(
     plot.tag = element_text(size = rel(1), angle = 90),
     plot.tag.position = "left"
   )
 
-ggsave("figures/marker_method_comparision.png",p1,width=8,height=5,units="in",dpi=300)
+ggsave("figures/marker_method_comparision.png",p1_mosaic,width=8,height=5,units="in",dpi=300)
+ggsave("figures/Final Figures/Figure3.tif",p1_mosaic,width=8,height=5,units="in",dpi=300)
 
 
 #eDNA Concentrations ------
@@ -293,7 +294,7 @@ comp_df_stand <- comp_df%>%
                  data.frame()
 
 # Fit the linear model
-model <- lm(stand ~ duration * type, data = data)
+model <- lm(stand ~ duration * type, data = comp_df_stand )
 
 # Summarize the model
 summary(model)
@@ -313,8 +314,8 @@ pred_data$stand = pred_data[,3]
 
 plotcols <- c("cornflowerblue","tomato3")
   
-  p1 <- ggplot(data, aes(x = duration, color = type)) +
-    geom_point(aes(y=stand)) +
+  p1 <- ggplot(data=comp_df_stand , aes(x = duration, color = type)) +
+    geom_point(data=comp_df_stand ,aes(y=stand)) +
     geom_line(data = pred_data, aes(x = duration, y = pred[,1], color = type), size = 1) +
     geom_ribbon(data = pred_data, aes(x = duration, y = pred[,1], ymin = pred[,2], ymax = pred[,3],fill=type), alpha = 0.2) +
     geom_smooth(aes(y=stand,group = interaction(type, rep)), method = "lm", se = FALSE, linetype = "dashed", size = 0.5) +
@@ -329,6 +330,7 @@ plotcols <- c("cornflowerblue","tomato3")
           strip.background = element_rect(fill="white"))
   
   ggsave("figures/DNAYield_time.png",p1,height=6,width=8,units="in",dpi=300)
+  ggsave("figures/Final Figures/Figure2.tif",p1,height=6,width=8,units="in",dpi=300)
 
 
   #alternative test - does the differnce between the two methods vary as a function time. 
@@ -478,7 +480,7 @@ nmds_plot <- ggplot(data=hull_data)+
                             
                                 
 ggsave("figures/nmds_plot_all.png",nmds_plot,height=6,width=8,units="in",dpi=300)
-
+ggsave("figures/Final Figures/Figure5.tif",nmds_plot,height=6,width=8,units="in",dpi=300)
 
 # peform a multivariate analysis of variance. 
 
@@ -689,7 +691,7 @@ sa_plot_12s <- ggplot(data=plot_df%>%filter(marker=="12S"),aes(group=method,fill
               scale_y_continuous(limits=c(0,60))+
               theme_bw()+
               facet_wrap(~marker,ncol=2)+
-              labs(x = "Number of Samples", y = "Species Richness",fill="",color="")+
+              labs(x = "Number of samples", y = "Species richness ± s.e.",fill="",color="")+
               theme(strip.background = element_rect(fill="white"),
                     legend.position="inside",
                     legend.position.inside = c(0.2,0.89),
@@ -703,7 +705,7 @@ sa_plot_CO1 <- ggplot(data=plot_df%>%filter(marker=="CO1"),aes(group=method,fill
               scale_y_continuous(limits=c(0,60))+
               theme_bw()+
               facet_wrap(~marker,ncol=2)+
-              labs(x = "Number of Samples", y = "Species Richness",fill="",color="")+
+              labs(x = "Number of samples", y = "Species richness ± s.e.",fill="",color="")+
               theme(strip.background = element_rect(fill="white"),
                     legend.position="none",
                     axis.text.y = element_blank(),
@@ -715,3 +717,4 @@ sa_plot_CO1 <- ggplot(data=plot_df%>%filter(marker=="CO1"),aes(group=method,fill
 mos_plot <- sa_plot_12s + chao_12S + sa_plot_CO1 + chao_CO1 + plot_layout(ncol = 4, widths = c(5, 1, 5, 1))
             
 ggsave("figures/richness_estimate_mosaic.png",mos_plot,width=8,height=4,units="in",dpi=300)
+ggsave("figures/Final Figures/Figure4.tif",mos_plot,width=8,height=4,units="in",dpi=300)
