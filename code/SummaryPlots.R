@@ -327,7 +327,7 @@ pred_data$stand = pred_data[,3]
     theme_bw() +
     scale_fill_manual(values=plotcols)+
     scale_colour_manual(values=plotcols)+
-    labs(x="Preservation duration (days)",y="Standardized DNA yeild",col="",fill="")+
+    labs(x="Preservation duration (days)",y="Standardized DNA yield",col="",fill="")+
     theme(legend.position = c(0, 0),  # Position legend in the top left
           legend.justification = c(0, 0),
           legend.background = element_blank(),
