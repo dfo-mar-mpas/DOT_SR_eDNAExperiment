@@ -1,0 +1,59 @@
+SampleID,Sampler,Date,Volume,Preservative,Notes,Sampler,DNA Qubit (ng/uL),Latitude,Longitude
+Wk1_Control,Smith-Root,11-Aug-23,1L,"Frozen, -80","filter clogged very quickly, dirty water",Mallory,29.6,44.6849,-63.6141
+Wk1_Blank,Smith-Root,11-Aug-23,1.5L,"Frozen, -80","diH2O, quick filter",Mallory,0.25,44.6849,-63.6141
+Wk2_Control,Smith-Root,21-Aug-23,3L,"Frozen, -80","done in-lab, forgot to bring filters into the field, no field blank",Mallory,41.6,44.6849,-63.6141
+Wk3_Control,Smith-Root,29-Aug-23,3L,"Frozen, -80",,Mallory,40,44.6849,-63.6141
+Wk3_Blank,Smith-Root,29-Aug-23,1.5L,"Frozen, -80","diH2O, quick filter",Mallory,<0.05,44.6849,-63.6141
+Wk4_1003Parallel,Smith-Root,8-Sep-23,125mL,"Frozen, -80","Started using the MCT backpack sampler, no issues",Nick,2.03,44.6849,-63.6141
+Wk4_1004Parallel,Smith-Root,8-Sep-23,125mL,"Frozen, -80",No issues,Nick,<0.05,44.6849,-63.6141
+Wk4_1005Parallel,Smith-Root,8-Sep-23,125mL,"Frozen, -80",No issues,Nick,3.19,44.6849,-63.6141
+Wk4_Blank,Smith-Root,8-Sep-23,1.5L,"Frozen, -80",No issues,Nick,0.538,44.6849,-63.6141
+Wk5_1003Parallel,Smith-Root,15-Sep-23,125mL,"Frozen, -80",No issues,Mallory,7.29,44.6849,-63.6141
+Wk5_1004Parallel,Smith-Root,15-Sep-23,125mL,"Frozen, -80",No issues,Mallory,7.53,44.6849,-63.6141
+Wk5_1005Parallel,Smith-Root,15-Sep-23,125mL,"Frozen, -80",No issues,Mallory,5.7,44.6849,-63.6141
+Wk5_FieldBlank,Smith-Root,15-Sep-23,1.5L,"Frozen, -80",No issues,Mallory,0.16,44.6849,-63.6141
+Wk6_1003Parallel,Smith-Root,25-Sep-23,125mL,"Frozen, -80",No issues,Mallory,1.91,44.6849,-63.6141
+Wk6_1004Parallel,Smith-Root,25-Sep-23,125mL,"Frozen, -80",No issues,Mallory,9.62,44.6849,-63.6141
+Wk6_1005Parallel,Smith-Root,25-Sep-23,125mL,"Frozen, -80",No issues,Mallory,6.2,44.6849,-63.6141
+Wk6_FieldBlank,Smith-Root,25-Sep-23,1.5L,"Frozen, -80",No issues,Mallory,0.23,44.6849,-63.6141
+Wk7_1003Parallel,Smith-Root,3-Oct-23,125mL,"Frozen, -80",No issues,Mallory,13.6,44.6849,-63.6141
+Wk7_1004Parallel,Smith-Root,3-Oct-23,125mL,"Frozen, -80",No issues,Mallory,5.91,44.6849,-63.6141
+Wk7_1005Parallel,Smith-Root,3-Oct-23,125mL,"Frozen, -80",No issues,Mallory,11.4,44.6849,-63.6141
+Wk7_FieldBlank,Smith-Root,3-Oct-23,1.5L,"Frozen, -80",No issues,Mallory,0.44,44.6849,-63.6141
+Wk8_1003Parallel,Smith-Root,10-Oct-23,125mL,"Frozen, -80",DOT sampler only 6mL,Mallory,3.38,44.6849,-63.6141
+Wk8_1004Parallel,Smith-Root,10-Oct-23,125mL,"Frozen, -80",No issues,Mallory,<0.05,44.6849,-63.6141
+Wk8_1005Parallel,Smith-Root,10-Oct-23,125mL,"Frozen, -80",No issues,Mallory,5.28,44.6849,-63.6141
+Wk8_FieldBlank,Smith-Root,10-Oct-23,1.5L,"Frozen, -80",No issues,Mallory,0.31,44.6849,-63.6141
+Wk9_1003Parallel,Smith-Root,16-Oct-23,125mL,"Frozen, -80",No issues,Mallory,8.76,44.6849,-63.6141
+Wk9_1004Parallel,Smith-Root,16-Oct-23,125mL,"Frozen, -80",No issues,Mallory,17.2,44.6849,-63.6141
+Wk9_FieldBlank,Smith-Root,16-Oct-23,1.5L,"Frozen, -80",No issues,Mallory,0.16,44.6849,-63.6141
+1003_Wk1,DOT Sampler,11-Aug-23,,RNAlater,,Mallory,0.558,44.6849,-63.6141
+1003_Wk2,DOT Sampler,21-Aug-23,,RNAlater,,Mallory,4.99,44.6849,-63.6141
+1003_Wk3,DOT Sampler,29-Aug-23,,RNAlater,,Mallory,3.69,44.6849,-63.6141
+1003_Wk4,DOT Sampler,8-Sep-23,,RNAlater,,Nick,3.5,44.6849,-63.6141
+1003_Wk5,DOT Sampler,15-Sep-23,,RNAlater,,Mallory,1.07,44.6849,-63.6141
+1003_Wk6,DOT Sampler,25-Sep-23,,RNAlater,,Mallory,3.25,44.6849,-63.6141
+1003_Wk7,DOT Sampler,3-Oct-23,,RNAlater,,Mallory,0.446,44.6849,-63.6141
+1003_Wk8,DOT Sampler,10-Oct-23,,RNAlater,,Mallory,0.575,44.6849,-63.6141
+1003_Wk9,DOT Sampler,16-Oct-23,,RNAlater,,Mallory,10.5,44.6849,-63.6141
+1004_Wk1,DOT Sampler,11-Aug-23,,RNAlater,,Mallory,9.77,44.6849,-63.6141
+1004_Wk2,DOT Sampler,21-Aug-23,,RNAlater,,Mallory,0.388,44.6849,-63.6141
+1004_Wk3,DOT Sampler,29-Aug-23,,RNAlater,,Mallory,5.98,44.6849,-63.6141
+1004_Wk4,DOT Sampler,8-Sep-23,,RNAlater,,Nick,<0.05,44.6849,-63.6141
+1004_Wk5,DOT Sampler,15-Sep-23,,RNAlater,,Mallory,3.89,44.6849,-63.6141
+1004_Wk6,DOT Sampler,25-Sep-23,,RNAlater,,Mallory,4.84,44.6849,-63.6141
+1004_Wk7,DOT Sampler,3-Oct-23,,RNAlater,,Mallory,16.2,44.6849,-63.6141
+1004_Wk8,DOT Sampler,10-Oct-23,,RNAlater,,Mallory,<0.05,44.6849,-63.6141
+1004_Wk9,DOT Sampler,16-Oct-23,,RNAlater,,Mallory,9.36,44.6849,-63.6141
+1005_Wk1,DOT Sampler,11-Aug-23,,RNAlater,,Mallory,1.65,44.6849,-63.6141
+1005_Wk2,DOT Sampler,21-Aug-23,,RNAlater,,Mallory,2.25,44.6849,-63.6141
+1005_Wk3,DOT Sampler,29-Aug-23,,RNAlater,,Mallory,7.01,44.6849,-63.6141
+1005_Wk4,DOT Sampler,8-Sep-23,,RNAlater,,Nick,5.2,44.6849,-63.6141
+1005_Wk5,DOT Sampler,15-Sep-23,,RNAlater,,Mallory,1.47,44.6849,-63.6141
+1005_Wk6,DOT Sampler,25-Sep-23,,RNAlater,,Mallory,2.99,44.6849,-63.6141
+1005_Wk7,DOT Sampler,3-Oct-23,,RNAlater,,Mallory,4.28,44.6849,-63.6141
+1005_Wk8,DOT Sampler,10-Oct-23,,RNAlater,,Mallory,1.51,44.6849,-63.6141
+1005_Wk9,DOT Sampler,16-Oct-23,,RNAlater,,Mallory,0.357,44.6849,-63.6141
+XN1,Extraction blank,,,,extraction blank,,<0.05,NA,NA
+XN2,Extraction blank,,,,extraction blank,,0.1,NA,NA
+XN3,Extraction blank,,,,extraction blank,,<0.05,NA,NA
