@@ -4,7 +4,7 @@
 
 Code and data for an environmental DNA (eDNA) experiment conducted in summer 2023 comparing [DOT autonomous eDNA samplers](https://dartmouthocean.com/products/edna-sampler) with a standardized protocol using Smith-Root benchtop filtering setup. 
 
-Sample processing and sequence data is provided through a partnership with the Hakai Institute, British Columbia. 
+Sample processing and sequence data is provided through a partnership with the Hakai Institute, British Columbia. Raw sequence reads are available in the [NCBI Sequence Read Archive](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1139183)
 
 ![](figures/DeploymentMosaic-01.png)
 
